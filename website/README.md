@@ -1,4 +1,4 @@
-# BrandName - Montreal Real Estate Intelligence Platform
+# Base Pivot - Montreal Real Estate Intelligence Platform
 
 A clean, modern, SEO-optimized website for Montreal real estate insights, neighborhood intelligence, and decision-making tools.
 
@@ -12,7 +12,7 @@ This is a highly functional, responsive, and compliant website built with vanill
 - **SEO Optimized**: Semantic HTML, proper heading hierarchy, meta tags, and structured data
 - **Accessible**: WCAG 2.1 compliant with skip links, ARIA labels, and keyboard navigation
 - **Performance**: Lightweight, no frameworks, optimized for Core Web Vitals
-- **Clean Design**: Professional, modern aesthetic with the BrandName design system
+- **Clean Design**: Professional, modern aesthetic with the Base Pivot design system
 
 ## Design System
 
@@ -163,7 +163,7 @@ php -S localhost:8000
 
 #### Update Brand Name
 
-Replace "BrandName" throughout the codebase with your actual brand name:
+Replace "Base Pivot" throughout the codebase with your actual brand name:
 
 - `index.html`: All instances in text and meta tags
 - Update page title and meta descriptions

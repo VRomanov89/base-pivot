@@ -1,0 +1,26 @@
+<svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo Icon - Minimalist geometric house/pivot symbol -->
+  <g id="icon">
+    <!-- Base - solid foundation -->
+    <rect x="2" y="28" width="32" height="4" rx="1" fill="#0F766E"/>
+
+    <!-- House/Building structure -->
+    <path d="M6 24L18 14L30 24V28H6V24Z" fill="#0F766E"/>
+
+    <!-- Pivot arrow element -->
+    <path d="M22 18L26 14L22 10" stroke="#0F766E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M26 14H14" stroke="#0F766E" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Text -->
+  <g id="text">
+    <!-- "BASE" -->
+    <text x="42" y="20" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="800" fill="#0B0F17" letter-spacing="-0.02em">BASE</text>
+
+    <!-- "PIVOT" -->
+    <text x="42" y="34" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="800" fill="#0F766E" letter-spacing="-0.02em">PIVOT</text>
+
+    <!-- Tagline -->
+    <text x="108" y="24" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500" fill="#4B5563" letter-spacing="0.02em">MONTREAL REAL ESTATE</text>
+  </g>
+</svg>

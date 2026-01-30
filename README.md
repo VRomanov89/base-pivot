@@ -12,7 +12,7 @@ This project consists of a clean, responsive website built with vanilla HTML, CS
 - **SEO Optimized**: Semantic HTML, structured data, and meta tags
 - **Accessible**: WCAG 2.1 compliant with keyboard navigation and ARIA labels
 - **Fast Performance**: Lightweight code optimized for Core Web Vitals
-- **Clean Design**: Professional aesthetic with the BrandName design system
+- **Clean Design**: Professional aesthetic with the Base Pivot design system
 
 ## Project Structure
 
@@ -96,7 +96,7 @@ Detailed documentation is available in:
 
 ## License
 
-Copyright © 2026 BrandName. All rights reserved.
+Copyright © 2026 Base Pivot. All rights reserved.
 
 ## Contact
 
