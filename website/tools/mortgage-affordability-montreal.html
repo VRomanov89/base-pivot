@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Affordability Calculator Montreal | Base Pivot</title>
+  <meta name="description" content="Calculate what you can afford to buy in Montreal based on income, down payment, and current rates. Includes stress test impact.">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <style>
+    .tool-hero {
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.03) 0%, rgba(15, 118, 110, 0.08) 100%);
+      padding: 64px 0 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .tool-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .calculator {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadowSoft);
+    }
+    .calculator__section {
+      margin-bottom: 32px;
+    }
+    .calculator__section:last-child {
+      margin-bottom: 0;
+    }
+    .calculator__section-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 20px 0;
+      color: var(--ink);
+    }
+    .input-group {
+      margin-bottom: 20px;
+    }
+    .input-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .input-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .input-row input {
+      flex: 1;
+    }
+    .input-prefix {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--slate);
+    }
+    .input-suffix {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--slate);
+    }
+    .result-card {
+      background: linear-gradient(135deg, var(--accent) 0%, #14B8A6 100%);
+      color: white;
+      padding: 32px;
+      border-radius: var(--radius);
+      text-align: center;
+    }
+    .result-card__label {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      opacity: 0.9;
+    }
+    .result-card__value {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .result-card__details {
+      font-size: 15px;
+      opacity: 0.9;
+    }
+    .assumptions {
+      background: var(--surfaceMuted);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-top: 32px;
+    }
+    .assumptions__title {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0 0 12px 0;
+      color: var(--ink);
+    }
+    .assumptions ul {
+      margin: 0;
+      padding-left: 24px;
+    }
+    .assumptions li {
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--slate);
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" role="banner">
+    <nav class="navbar" aria-label="Primary">
+      <div class="navbar__inner">
+        <a class="brand" href="/">
+          <img src="/images/logo.svg" alt="Base Pivot - Montreal Real Estate" class="brand__logo" width="140" height="32" />
+        </a>
+        <ul class="nav" role="list">
+          <li class="nav__item"><a class="nav__link" href="/insights">Insights</a></li>
+          <li class="nav__item"><a class="nav__link" href="/neighborhoods">Neighborhoods</a></li>
+          <li class="nav__item"><a class="nav__link" href="/tools">Tools</a></li>
+          <li class="nav__item"><a class="nav__link" href="/about">About</a></li>
+        </ul>
+        <div class="navbar__actions">
+          <a class="btn btn--primary" href="/join">Join Free</a>
+          <button class="icon-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span class="icon-btn__bars" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobileMenu" hidden>
+        <ul class="mobile-menu__list" role="list">
+          <li><a class="mobile-menu__link" href="/insights">Insights</a></li>
+          <li><a class="mobile-menu__link" href="/neighborhoods">Neighborhoods</a></li>
+          <li><a class="mobile-menu__link" href="/tools">Tools</a></li>
+          <li><a class="mobile-menu__link" href="/about">About</a></li>
+        </ul>
+        <div class="mobile-menu__actions">
+          <a class="btn btn--primary btn--full" href="/join">Join Free</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="tool-hero">
+      <div class="container">
+        <div style="max-width: 750px; margin: 0 auto; text-align: center;">
+          <h1>Mortgage Affordability Calculator</h1>
+          <p class="text-lg text-slate" style="margin: 16px 0 0 0;">
+            Calculate what you can afford to buy in Montreal based on your income, down payment, and current mortgage rates. Includes stress test impact.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="tool-content">
+          <div class="calculator">
+            <div class="calculator__section">
+              <h2 class="calculator__section-title">Your Financial Information</h2>
+              <div class="input-group">
+                <label for="annual-income">Annual Household Income</label>
+                <div class="input-row">
+                  <span class="input-prefix">$</span>
+                  <input type="number" id="annual-income" value="100000" min="0" step="1000">
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="down-payment">Down Payment</label>
+                <div class="input-row">
+                  <span class="input-prefix">$</span>
+                  <input type="number" id="down-payment" value="50000" min="0" step="5000">
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="other-debts">Monthly Debt Payments (car, student loans, credit cards)</label>
+                <div class="input-row">
+                  <span class="input-prefix">$</span>
+                  <input type="number" id="other-debts" value="500" min="0" step="50">
+                  <span class="input-suffix">/month</span>
+                </div>
+              </div>
+            </div>
+            <div class="calculator__section">
+              <h2 class="calculator__section-title">Mortgage Details</h2>
+              <div class="input-group">
+                <label for="interest-rate">Mortgage Interest Rate</label>
+                <div class="input-row">
+                  <input type="number" id="interest-rate" value="4.5" min="0" max="15" step="0.1">
+                  <span class="input-suffix">%</span>
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="amortization">Amortization Period</label>
+                <div class="input-row">
+                  <input type="number" id="amortization" value="25" min="5" max="30" step="5">
+                  <span class="input-suffix">years</span>
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="property-tax">Est. Annual Property Tax</label>
+                <div class="input-row">
+                  <span class="input-prefix">$</span>
+                  <input type="number" id="property-tax" value="4500" min="0" step="100">
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="condo-fees">Monthly Condo Fees (if applicable)</label>
+                <div class="input-row">
+                  <span class="input-prefix">$</span>
+                  <input type="number" id="condo-fees" value="0" min="0" step="50">
+                  <span class="input-suffix">/month</span>
+                </div>
+              </div>
+            </div>
+            <div class="calculator__section">
+              <button class="btn btn--primary btn--lg" onclick="calculateAffordability()" style="width: 100%;">Calculate Affordability</button>
+            </div>
+          </div>
+          <div id="results" style="margin-top: 32px; display: none;">
+            <div class="result-card">
+              <div class="result-card__label">Maximum Purchase Price</div>
+              <div class="result-card__value" id="max-price">$450,000</div>
+              <div class="result-card__details">
+                Based on stress test qualification at <span id="stress-test-rate">6.5%</span><br>
+                Monthly payment: <span id="monthly-payment">$2,450</span>
+              </div>
+            </div>
+            <div class="assumptions">
+              <h3 class="assumptions__title">Calculation Assumptions</h3>
+              <ul>
+                <li><strong>Stress Test:</strong> You must qualify at the greater of contract rate + 2% or 5.25% (current OSFI rule)</li>
+                <li><strong>GDS Ratio:</strong> Housing costs should not exceed 32% of gross income</li>
+                <li><strong>TDS Ratio:</strong> Total debt should not exceed 40% of gross income</li>
+                <li><strong>Closing Costs:</strong> Budget an additional 3-4% of purchase price for closing costs</li>
+                <li><strong>CMHC Insurance:</strong> Required if down payment is less than 20%</li>
+                <li><strong>Quebec Welcome Tax:</strong> Property transfer tax ranges from 0.5% to 3% of purchase price</li>
+              </ul>
+            </div>
+          </div>
+          <div style="margin-top: 48px; padding: 32px; background: var(--surfaceMuted); border-radius: var(--radius);">
+            <h2 style="margin: 0 0 16px 0;">Understanding the Stress Test</h2>
+            <p style="margin: 0 0 16px 0; color: var(--slate); line-height: 1.7;">
+              Canada's mortgage stress test requires you to qualify at a higher rate than your actual mortgage rate. This ensures you can still afford payments if rates rise. The qualification rate is either your contract rate + 2%, or 5.25%, whichever is higher.
+            </p>
+            <p style="margin: 0; color: var(--slate); line-height: 1.7;">
+              <strong>Example:</strong> If your mortgage rate is 4.5%, you must qualify at 6.5%. This reduces your buying power by approximately 15-20% compared to qualifying at the contract rate.
+            </p>
+          </div>
+          <div style="margin-top: 32px;">
+            <h2 style="margin: 0 0 20px 0; text-align: center;">Other Helpful Tools</h2>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+              <a href="/tools/rent-vs-buy-montreal.html" class="card" style="text-decoration: none; padding: 20px; text-align: center;">
+                <div style="font-size: 32px; margin-bottom: 12px;">⚖️</div>
+                <h3 class="card__title" style="font-size: 16px;">Rent vs Buy</h3>
+              </a>
+              <a href="/tools/rental-cash-flow-estimator.html" class="card" style="text-decoration: none; padding: 20px; text-align: center;">
+                <div style="font-size: 32px; margin-bottom: 12px;">📈</div>
+                <h3 class="card__title" style="font-size: 16px;">Cash Flow</h3>
+              </a>
+              <a href="/tools/closing-costs-quebec.html" class="card" style="text-decoration: none; padding: 20px; text-align: center;">
+                <div style="font-size: 32px; margin-bottom: 12px;">📋</div>
+                <h3 class="card__title" style="font-size: 16px;">Closing Costs</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__col footer__brand">
+        <a class="footer__logo" href="/">
+          <span class="footer__logoName">Base Pivot</span>
+          <span class="footer__logoSub">Montreal Real Estate</span>
+        </a>
+        <p class="footer__tagline">Local insight for smarter Montreal real estate decisions.</p>
+        <div class="footer__social" aria-label="Social links">
+          <a class="footer__socialLink" href="https://linkedin.com" rel="noopener" target="_blank">LinkedIn</a>
+          <a class="footer__socialLink" href="https://youtube.com" rel="noopener" target="_blank">YouTube</a>
+          <a class="footer__socialLink" href="https://instagram.com" rel="noopener" target="_blank">Instagram</a>
+        </div>
+      </div>
+      <nav class="footer__col" aria-label="Explore">
+        <h3 class="footer__heading">Explore</h3>
+        <ul class="footer__list" role="list">
+          <li><a class="footer__link" href="/insights">Market Insights</a></li>
+          <li><a class="footer__link" href="/neighborhoods">Montreal Neighborhoods</a></li>
+          <li><a class="footer__link" href="/market-brief">Market Brief</a></li>
+          <li><a class="footer__link" href="/about">About</a></li>
+          <li><a class="footer__link" href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="footer__col" aria-label="Tools">
+        <h3 class="footer__heading">Tools</h3>
+        <ul class="footer__list" role="list">
+          <li><a class="footer__link" href="/tools/rent-vs-buy-montreal">Rent vs Buy Calculator</a></li>
+          <li><a class="footer__link" href="/tools/mortgage-affordability-montreal">Mortgage Affordability</a></li>
+          <li><a class="footer__link" href="/tools/cash-flow-rental-property">Rental Cash Flow</a></li>
+          <li><a class="footer__link" href="/tools/closing-costs-quebec">Closing Costs in Quebec</a></li>
+        </ul>
+      </nav>
+      <div class="footer__col footer__cta">
+        <h3 class="footer__heading">Join Free</h3>
+        <p class="footer__ctaText">Get a short weekly update on what changed in the Montreal market and what to watch next.</p>
+        <form class="footer__form" action="/join" method="get">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input class="footer__input" id="footer-email" name="email" type="email" placeholder="Email address" autocomplete="email" required />
+          <button class="btn btn--primary footer__btn" type="submit">Join Free</button>
+        </form>
+        <p class="footer__fineprint">No spam. Unsubscribe anytime.</p>
+        <div class="footer__meta">
+          <a class="footer__metaLink" href="/legal/privacy">Privacy</a>
+          <a class="footer__metaLink" href="/legal/terms">Terms</a>
+          <a class="footer__metaLink" href="/legal/disclaimer">Disclaimer</a>
+          <a class="footer__metaLink" href="/sources">Sources</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__bottomInner">
+        <p class="footer__copyright">© <span id="year"></span> Base Pivot. Montreal, Quebec.</p>
+        <p class="footer__disclaimer">Information is provided for educational purposes and does not constitute financial, legal, or real estate advice.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/footer.js"></script>
+  <script>
+    function calculateAffordability() {
+      // Get input values
+      const income = parseFloat(document.getElementById('annual-income').value) || 0;
+      const downPayment = parseFloat(document.getElementById('down-payment').value) || 0;
+      const otherDebts = parseFloat(document.getElementById('other-debts').value) || 0;
+      const interestRate = parseFloat(document.getElementById('interest-rate').value) || 4.5;
+      const amortization = parseFloat(document.getElementById('amortization').value) || 25;
+      const propertyTax = parseFloat(document.getElementById('property-tax').value) || 0;
+      const condoFees = parseFloat(document.getElementById('condo-fees').value) || 0;
+
+      // Calculate stress test rate
+      const stressTestRate = Math.max(interestRate + 2, 5.25);
+
+      // Calculate maximum monthly housing costs (32% GDS)
+      const maxMonthlyHousing = (income / 12) * 0.32;
+
+      // Calculate maximum monthly total debt (40% TDS)
+      const maxMonthlyTotal = (income / 12) * 0.40;
+
+      // Subtract property tax and condo fees from available housing budget
+      const monthlyPropertyCosts = (propertyTax / 12) + condoFees;
+      const availableForMortgage = Math.min(maxMonthlyHousing, maxMonthlyTotal - otherDebts) - monthlyPropertyCosts;
+
+      // Calculate maximum mortgage amount at stress test rate
+      const monthlyRate = (stressTestRate / 100) / 12;
+      const numPayments = amortization * 12;
+      const maxMortgage = availableForMortgage * ((1 - Math.pow(1 + monthlyRate, -numPayments)) / monthlyRate);
+
+      // Calculate maximum purchase price
+      const maxPrice = maxMortgage + downPayment;
+
+      // Calculate actual monthly payment at contract rate
+      const actualMonthlyRate = (interestRate / 100) / 12;
+      const actualPayment = maxMortgage * (actualMonthlyRate * Math.pow(1 + actualMonthlyRate, numPayments)) / (Math.pow(1 + actualMonthlyRate, numPayments) - 1);
+
+      // Display results
+      document.getElementById('max-price').textContent = '$' + Math.round(maxPrice).toLocaleString();
+      document.getElementById('stress-test-rate').textContent = stressTestRate.toFixed(2) + '%';
+      document.getElementById('monthly-payment').textContent = '$' + Math.round(actualPayment).toLocaleString();
+      document.getElementById('results').style.display = 'block';
+
+      // Scroll to results
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  </script>
+</body>
+</html>

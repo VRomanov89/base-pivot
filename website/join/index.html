@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Join The Montreal Market Brief | Base Pivot Newsletter</title>
+  <meta name="description" content="Get a short weekly update on Montreal real estate trends, neighborhood insights, and market analysis. Free, no spam, unsubscribe anytime.">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Join The Montreal Market Brief | Base Pivot Newsletter">
+  <meta property="og:description" content="Get a short weekly update on Montreal real estate trends, neighborhood insights, and market analysis. Free, no spam, unsubscribe anytime.">
+  <meta property="og:url" content="https://base-pivot.vercel.app/join">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+
+  <!-- Preconnect to fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+  <style>
+    /* Join Page Specific Styles */
+    .join-hero {
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.05) 0%, rgba(15, 118, 110, 0.12) 100%);
+      padding: 80px 0 64px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .join-hero__content {
+      max-width: 650px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .join-hero__badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.1);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .join-hero__title {
+      margin-bottom: 16px;
+    }
+
+    .join-hero__subtitle {
+      font-size: 20px;
+      line-height: 1.6;
+      color: var(--slate);
+      margin: 0 0 32px 0;
+    }
+
+    /* Signup Form */
+    .signup-form {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--shadow);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .signup-form__title {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0 0 24px 0;
+      text-align: center;
+      color: var(--ink);
+    }
+
+    .signup-form__group {
+      margin-bottom: 16px;
+    }
+
+    .signup-form__group:last-of-type {
+      margin-bottom: 20px;
+    }
+
+    .signup-form__label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .signup-form__input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 16px;
+      font-family: inherit;
+      color: var(--ink);
+      background: var(--surface);
+      transition: border-color 150ms ease, box-shadow 150ms ease;
+    }
+
+    .signup-form__input:focus {
+      outline: none;
+      border-color: rgba(15, 118, 110, 0.45);
+      box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+    }
+
+    .signup-form__btn {
+      width: 100%;
+      height: 52px;
+      font-size: 16px;
+    }
+
+    .signup-form__note {
+      font-size: 13px;
+      color: var(--slate);
+      text-align: center;
+      margin: 16px 0 0 0;
+      line-height: 1.5;
+    }
+
+    /* Benefits Grid */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .benefit-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      text-align: center;
+    }
+
+    .benefit-card__icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .benefit-card__title {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      color: var(--ink);
+    }
+
+    .benefit-card__description {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--slate);
+      margin: 0;
+    }
+
+    /* What You Get Section */
+    .what-you-get {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .what-you-get__list {
+      list-style: none;
+      padding: 0;
+      margin: 32px 0 0 0;
+    }
+
+    .what-you-get__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .what-you-get__icon {
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+
+    .what-you-get__content {
+      flex: 1;
+    }
+
+    .what-you-get__title {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 0 0 6px 0;
+      color: var(--ink);
+    }
+
+    .what-you-get__description {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--slate);
+      margin: 0;
+    }
+
+    /* Social Proof */
+    .social-proof {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .social-proof__stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+
+    .social-proof__stat {
+      padding: 16px;
+    }
+
+    .social-proof__number {
+      display: block;
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .social-proof__label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--slate);
+    }
+
+    /* FAQ Section */
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .faq-item__question {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+      color: var(--ink);
+    }
+
+    .faq-item__answer {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--slate);
+      margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .social-proof__stats {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .join-hero {
+        padding: 56px 0 40px;
+      }
+
+      .signup-form {
+        padding: 28px 20px;
+      }
+
+      .what-you-get__item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip Link for Accessibility -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header / Navbar -->
+  <header class="site-header" role="banner">
+    <nav class="navbar" aria-label="Primary">
+      <div class="navbar__inner">
+
+        <!-- Logo -->
+        <a class="brand" href="/">
+          <img src="/images/logo.svg" alt="Base Pivot - Montreal Real Estate" class="brand__logo" width="140" height="32" />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <ul class="nav" role="list">
+          <li class="nav__item">
+            <a class="nav__link" href="/insights">Insights</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="/neighborhoods">Neighborhoods</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="/tools">Tools</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="/about">About</a>
+          </li>
+        </ul>
+
+        <!-- Right Actions -->
+        <div class="navbar__actions">
+          <a class="btn btn--primary" href="/join">Join Free</a>
+
+          <!-- Mobile Toggle -->
+          <button class="icon-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span class="icon-btn__bars" aria-hidden="true"></span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu" hidden>
+        <ul class="mobile-menu__list" role="list">
+          <li><a class="mobile-menu__link" href="/insights">Insights</a></li>
+          <li><a class="mobile-menu__link" href="/neighborhoods">Neighborhoods</a></li>
+          <li><a class="mobile-menu__link" href="/tools">Tools</a></li>
+          <li><a class="mobile-menu__link" href="/about">About</a></li>
+        </ul>
+        <div class="mobile-menu__actions">
+          <a class="btn btn--primary btn--full" href="/join">Join Free</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+
+    <!-- Hero Section -->
+    <section class="join-hero">
+      <div class="container">
+        <div class="join-hero__content">
+          <div class="join-hero__badge">Free Weekly Newsletter</div>
+          <h1 class="join-hero__title">The Montreal Market Brief</h1>
+          <p class="join-hero__subtitle">
+            A short weekly email that covers what changed in the Montreal real estate market, what it means, and what to watch next.
+          </p>
+
+          <!-- Signup Form -->
+          <div class="signup-form">
+            <h2 class="signup-form__title">Join for free</h2>
+            <form action="#" method="post">
+              <div class="signup-form__group">
+                <label class="signup-form__label" for="email">Email Address</label>
+                <input
+                  class="signup-form__input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="your@email.com"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+
+              <div class="signup-form__group">
+                <label class="signup-form__label" for="first-name">First Name (Optional)</label>
+                <input
+                  class="signup-form__input"
+                  type="text"
+                  id="first-name"
+                  name="first_name"
+                  placeholder="John"
+                  autocomplete="given-name"
+                />
+              </div>
+
+              <button type="submit" class="btn btn--primary signup-form__btn">
+                Join The Montreal Market Brief
+              </button>
+
+              <p class="signup-form__note">
+                No spam. Unsubscribe anytime. We respect your privacy and never share your email.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center mb-5">Why Subscribe?</h2>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-card__icon">📊</div>
+            <h3 class="benefit-card__title">Market Context</h3>
+            <p class="benefit-card__description">
+              Understand what changed and why it matters. No hype, just clear explanations of trends and data.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-card__icon">🏘️</div>
+            <h3 class="benefit-card__title">Neighborhood Insights</h3>
+            <p class="benefit-card__description">
+              Learn how different areas behave, what first-time buyers miss, and where value exists.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-card__icon">⏱️</div>
+            <h3 class="benefit-card__title">5-Minute Read</h3>
+            <p class="benefit-card__description">
+              Short, focused updates. No fluff. Delivered every Monday morning to start your week informed.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-card__icon">🎯</div>
+            <h3 class="benefit-card__title">Actionable Tools</h3>
+            <p class="benefit-card__description">
+              Get access to our free calculators and decision frameworks to test your assumptions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What You Get Section -->
+    <section class="section section--muted">
+      <div class="container">
+        <div class="what-you-get">
+          <h2 class="text-center mb-2">What's In Every Issue</h2>
+          <p class="text-center text-slate mb-4">
+            Each Monday, you'll receive a structured brief covering:
+          </p>
+
+          <ul class="what-you-get__list">
+            <li class="what-you-get__item">
+              <div class="what-you-get__icon">📈</div>
+              <div class="what-you-get__content">
+                <h3 class="what-you-get__title">Market Snapshot</h3>
+                <p class="what-you-get__description">
+                  Key metrics on inventory, pricing, and buyer conditions. Updated weekly with the latest data.
+                </p>
+              </div>
+            </li>
+
+            <li class="what-you-get__item">
+              <div class="what-you-get__icon">🏙️</div>
+              <div class="what-you-get__content">
+                <h3 class="what-you-get__title">Neighborhood Spotlight</h3>
+                <p class="what-you-get__description">
+                  A deep dive into one Montreal neighborhood each week, covering trends, character, and who it fits.
+                </p>
+              </div>
+            </li>
+
+            <li class="what-you-get__item">
+              <div class="what-you-get__icon">💡</div>
+              <div class="what-you-get__content">
+                <h3 class="what-you-get__title">Decision Scenario</h3>
+                <p class="what-you-get__description">
+                  Real-world examples of how to apply market insights to actual buying, selling, or investing decisions.
+                </p>
+              </div>
+            </li>
+
+            <li class="what-you-get__item">
+              <div class="what-you-get__icon">🔮</div>
+              <div class="what-you-get__content">
+                <h3 class="what-you-get__title">What to Watch</h3>
+                <p class="what-you-get__description">
+                  Upcoming events, data releases, or trends that could affect the market in the coming weeks.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center mb-4">Join Thousands of Montreal Readers</h2>
+
+        <div class="social-proof">
+          <div class="social-proof__stats">
+            <div class="social-proof__stat">
+              <span class="social-proof__number">5,200+</span>
+              <span class="social-proof__label">Active Subscribers</span>
+            </div>
+
+            <div class="social-proof__stat">
+              <span class="social-proof__number">68%</span>
+              <span class="social-proof__label">Open Rate</span>
+            </div>
+
+            <div class="social-proof__stat">
+              <span class="social-proof__number">4.8/5</span>
+              <span class="social-proof__label">Subscriber Rating</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section--muted">
+      <div class="container">
+        <h2 class="text-center mb-5">Common Questions</h2>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3 class="faq-item__question">How often will I receive emails?</h3>
+            <p class="faq-item__answer">
+              You'll receive one email every Monday morning. No daily spam, no promotional clutter. Just one focused update per week.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__question">Is this really free?</h3>
+            <p class="faq-item__answer">
+              Yes, completely free. No credit card required, no hidden fees, no premium tiers. We may introduce paid features in the future, but the core newsletter will always be free.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__question">Can I unsubscribe anytime?</h3>
+            <p class="faq-item__answer">
+              Absolutely. Every email includes an unsubscribe link. One click and you're out. No questions asked, no hard feelings.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__question">What if I'm not buying right now?</h3>
+            <p class="faq-item__answer">
+              Perfect. Our newsletter is written for people who want to stay informed even if they're not actively in the market. Many subscribers read for months before making a move.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__question">Do you share or sell my email?</h3>
+            <p class="faq-item__answer">
+              Never. We don't share, sell, or rent your email to anyone. Period. Read our full <a href="/legal/privacy">Privacy Policy</a> for details.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__question">What if I have a specific question?</h3>
+            <p class="faq-item__answer">
+              You can reply directly to any newsletter email or <a href="/contact">contact us here</a>. We read every message and respond to most within 24 hours.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section">
+      <div class="container" style="max-width: 600px; text-align: center;">
+        <h2 class="mb-3">Ready to stay informed?</h2>
+        <p class="text-lg text-slate mb-4">
+          Join over 5,000 Montrealers who get clear, practical market insights every Monday.
+        </p>
+        <a class="btn btn--primary btn--lg" href="#email">Join Free Newsletter</a>
+        <p class="text-sm text-slate mt-3">
+          No spam. Unsubscribe anytime.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer__inner">
+
+      <!-- Column 1: Brand -->
+      <div class="footer__col footer__brand">
+        <a class="footer__logo" href="/">
+          <span class="footer__logoName">Base Pivot</span>
+          <span class="footer__logoSub">Montreal Real Estate</span>
+        </a>
+
+        <p class="footer__tagline">
+          Local insight for smarter Montreal real estate decisions.
+        </p>
+
+        <div class="footer__social" aria-label="Social links">
+          <a class="footer__socialLink" href="https://linkedin.com" rel="noopener" target="_blank">LinkedIn</a>
+          <a class="footer__socialLink" href="https://youtube.com" rel="noopener" target="_blank">YouTube</a>
+          <a class="footer__socialLink" href="https://instagram.com" rel="noopener" target="_blank">Instagram</a>
+        </div>
+      </div>
+
+      <!-- Column 2: Explore -->
+      <nav class="footer__col" aria-label="Explore">
+        <h3 class="footer__heading">Explore</h3>
+        <ul class="footer__list" role="list">
+          <li><a class="footer__link" href="/insights">Market Insights</a></li>
+          <li><a class="footer__link" href="/neighborhoods">Montreal Neighborhoods</a></li>
+          <li><a class="footer__link" href="/market-brief">Market Brief</a></li>
+          <li><a class="footer__link" href="/about">About</a></li>
+          <li><a class="footer__link" href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Column 3: Tools -->
+      <nav class="footer__col" aria-label="Tools">
+        <h3 class="footer__heading">Tools</h3>
+        <ul class="footer__list" role="list">
+          <li><a class="footer__link" href="/tools/rent-vs-buy-montreal">Rent vs Buy Calculator</a></li>
+          <li><a class="footer__link" href="/tools/mortgage-affordability-montreal">Mortgage Affordability</a></li>
+          <li><a class="footer__link" href="/tools/cash-flow-rental-property">Rental Cash Flow</a></li>
+          <li><a class="footer__link" href="/tools/closing-costs-quebec">Closing Costs in Quebec</a></li>
+        </ul>
+      </nav>
+
+      <!-- Column 4: Join + Legal -->
+      <div class="footer__col footer__cta">
+        <h3 class="footer__heading">Join Free</h3>
+        <p class="footer__ctaText">
+          Get a short weekly update on what changed in the Montreal market and what to watch next.
+        </p>
+
+        <form class="footer__form" action="/join" method="get">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input
+            class="footer__input"
+            id="footer-email"
+            name="email"
+            type="email"
+            placeholder="Email address"
+            autocomplete="email"
+            required
+          />
+          <button class="btn btn--primary footer__btn" type="submit">Join Free</button>
+        </form>
+
+        <p class="footer__fineprint">
+          No spam. Unsubscribe anytime.
+        </p>
+
+        <div class="footer__meta">
+          <a class="footer__metaLink" href="/legal/privacy">Privacy</a>
+          <a class="footer__metaLink" href="/legal/terms">Terms</a>
+          <a class="footer__metaLink" href="/legal/disclaimer">Disclaimer</a>
+          <a class="footer__metaLink" href="/sources">Sources</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer__bottom">
+      <div class="footer__bottomInner">
+        <p class="footer__copyright">
+          © <span id="year"></span> Base Pivot. Montreal, Quebec.
+        </p>
+
+        <p class="footer__disclaimer">
+          Information is provided for educational purposes and does not constitute financial, legal, or real estate advice.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/navbar.js"></script>
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>

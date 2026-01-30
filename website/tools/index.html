@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Montreal Real Estate Calculators & Tools | Base Pivot</title>
+  <meta name="description" content="Free calculators and tools to help you make smarter Montreal real estate decisions. Affordability, rent vs buy, cash flow, and closing costs.">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <style>
+    .tools-hero {
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.03) 0%, rgba(15, 118, 110, 0.08) 100%);
+      padding: 64px 0 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .tools-hero__content {
+      max-width: 750px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .tool-card {
+      display: flex;
+      gap: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      text-decoration: none;
+      transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+    }
+    .tool-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: var(--accent);
+    }
+    .tool-card__icon {
+      font-size: 40px;
+      flex-shrink: 0;
+    }
+    .tool-card__content {
+      flex: 1;
+    }
+    .tool-card__title {
+      font-size: 19px;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      color: var(--ink);
+    }
+    .tool-card__description {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--slate);
+      margin: 0;
+    }
+    @media (max-width: 900px) {
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" role="banner">
+    <nav class="navbar" aria-label="Primary">
+      <div class="navbar__inner">
+        <a class="brand" href="/">
+          <img src="/images/logo.svg" alt="Base Pivot - Montreal Real Estate" class="brand__logo" width="140" height="32" />
+        </a>
+        <ul class="nav" role="list">
+          <li class="nav__item"><a class="nav__link" href="/insights">Insights</a></li>
+          <li class="nav__item"><a class="nav__link" href="/neighborhoods">Neighborhoods</a></li>
+          <li class="nav__item"><a class="nav__link" href="/tools" aria-current="page">Tools</a></li>
+          <li class="nav__item"><a class="nav__link" href="/about">About</a></li>
+        </ul>
+        <div class="navbar__actions">
+          <a class="btn btn--primary" href="/join">Join Free</a>
+          <button class="icon-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span class="icon-btn__bars" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobileMenu" hidden>
+        <ul class="mobile-menu__list" role="list">
+          <li><a class="mobile-menu__link" href="/insights">Insights</a></li>
+          <li><a class="mobile-menu__link" href="/neighborhoods">Neighborhoods</a></li>
+          <li><a class="mobile-menu__link" href="/tools" aria-current="page">Tools</a></li>
+          <li><a class="mobile-menu__link" href="/about">About</a></li>
+        </ul>
+        <div class="mobile-menu__actions">
+          <a class="btn btn--primary btn--full" href="/join">Join Free</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="tools-hero">
+      <div class="container">
+        <div class="tools-hero__content">
+          <h1 class="tools-hero__title">Montreal Real Estate Tools</h1>
+          <p class="tools-hero__subtitle text-lg text-slate">
+            Free calculators and decision frameworks to test assumptions and plan scenarios. All tailored for Montreal and Quebec.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="tools-grid">
+          <a class="tool-card" href="/tools/mortgage-affordability-montreal.html">
+            <div class="tool-card__icon">💰</div>
+            <div class="tool-card__content">
+              <h2 class="tool-card__title">Mortgage Affordability Calculator</h2>
+              <p class="tool-card__description">
+                Calculate what you can afford based on income, down payment, and current rates. Includes stress test impact.
+              </p>
+            </div>
+          </a>
+          <a class="tool-card" href="/tools/rent-vs-buy-montreal.html">
+            <div class="tool-card__icon">⚖️</div>
+            <div class="tool-card__content">
+              <h2 class="tool-card__title">Rent vs Buy Calculator</h2>
+              <p class="tool-card__description">
+                Compare the long-term financial impact of renting versus buying with real numbers and scenarios.
+              </p>
+            </div>
+          </a>
+          <a class="tool-card" href="/tools/rental-cash-flow-estimator.html">
+            <div class="tool-card__icon">📈</div>
+            <div class="tool-card__content">
+              <h2 class="tool-card__title">Rental Cash Flow Estimator</h2>
+              <p class="tool-card__description">
+                Estimate rental income, expenses, and cash flow for investment properties in Montreal.
+              </p>
+            </div>
+          </a>
+          <a class="tool-card" href="/tools/closing-costs-quebec.html">
+            <div class="tool-card__icon">📋</div>
+            <div class="tool-card__content">
+              <h2 class="tool-card__title">Closing Costs Calculator</h2>
+              <p class="tool-card__description">
+                Understand all the costs beyond the purchase price when buying in Quebec, including transfer tax.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="section section--muted">
+      <div class="container" style="max-width: 700px; text-align: center;">
+        <h2 class="mb-3">Get Weekly Decision Scenarios</h2>
+        <p class="text-lg text-slate mb-4">
+          Our newsletter includes real-world examples of how to apply these tools to actual buying, selling, or investing decisions.
+        </p>
+        <a class="btn btn--primary btn--lg" href="/join">Join Free Newsletter</a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__col footer__brand">
+        <a class="footer__logo" href="/">
+          <span class="footer__logoName">Base Pivot</span>
+          <span class="footer__logoSub">Montreal Real Estate</span>
+        </a>
+        <p class="footer__tagline">Local insight for smarter Montreal real estate decisions.</p>
+        <div class="footer__social" aria-label="Social links">
+          <a class="footer__socialLink" href="https://linkedin.com" rel="noopener" target="_blank">LinkedIn</a>
+          <a class="footer__socialLink" href="https://youtube.com" rel="noopener" target="_blank">YouTube</a>
+          <a class="footer__socialLink" href="https://instagram.com" rel="noopener" target="_blank">Instagram</a>
+        </div>
+      </div>
+      <nav class="footer__col" aria-label="Explore">
+        <h3 class="footer__heading">Explore</h3>
+        <ul class="footer__list" role="list">
+          <li><a class="footer__link" href="/insights">Market Insights</a></li>
+          <li><a class="footer__link" href="/neighborhoods">Montreal Neighborhoods</a></li>
+          <li><a class="footer__link" href="/market-brief">Market Brief</a></li>
+          <li><a class="footer__link" href="/about">About</a></li>
+          <li><a class="footer__link" href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="footer__col" aria-label="Tools">
+        <h3 class="footer__heading">Tools</h3>
+        <ul class="footer__list" role="list">
+          <li><a class="footer__link" href="/tools/rent-vs-buy-montreal">Rent vs Buy Calculator</a></li>
+          <li><a class="footer__link" href="/tools/mortgage-affordability-montreal">Mortgage Affordability</a></li>
+          <li><a class="footer__link" href="/tools/cash-flow-rental-property">Rental Cash Flow</a></li>
+          <li><a class="footer__link" href="/tools/closing-costs-quebec">Closing Costs in Quebec</a></li>
+        </ul>
+      </nav>
+      <div class="footer__col footer__cta">
+        <h3 class="footer__heading">Join Free</h3>
+        <p class="footer__ctaText">Get a short weekly update on what changed in the Montreal market and what to watch next.</p>
+        <form class="footer__form" action="/join" method="get">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input class="footer__input" id="footer-email" name="email" type="email" placeholder="Email address" autocomplete="email" required />
+          <button class="btn btn--primary footer__btn" type="submit">Join Free</button>
+        </form>
+        <p class="footer__fineprint">No spam. Unsubscribe anytime.</p>
+        <div class="footer__meta">
+          <a class="footer__metaLink" href="/legal/privacy">Privacy</a>
+          <a class="footer__metaLink" href="/legal/terms">Terms</a>
+          <a class="footer__metaLink" href="/legal/disclaimer">Disclaimer</a>
+          <a class="footer__metaLink" href="/sources">Sources</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__bottomInner">
+        <p class="footer__copyright">© <span id="year"></span> Base Pivot. Montreal, Quebec.</p>
+        <p class="footer__disclaimer">Information is provided for educational purposes and does not constitute financial, legal, or real estate advice.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/footer.js"></script>
+</body>
+</html>

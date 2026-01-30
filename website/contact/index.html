@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Contact Us | Base Pivot Montreal Real Estate</title>
+  <meta name="description" content="Get in touch with Base Pivot for questions about Montreal real estate, partnerships, or personalized insights.">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact Us | Base Pivot Montreal Real Estate">
+  <meta property="og:description" content="Get in touch with Base Pivot for questions about Montreal real estate, partnerships, or personalized insights.">
+  <meta property="og:url" content="https://base-pivot.vercel.app/contact">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+
+  <!-- Preconnect to fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+  <style>
+    /* Contact Page Specific Styles */
+    .contact-hero {
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.03) 0%, rgba(15, 118, 110, 0.08) 100%);
+      padding: 64px 0 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-hero__content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-hero__title {
+      margin-bottom: 16px;
+    }
+
+    .contact-hero__subtitle {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--slate);
+      margin: 0;
+    }
+
+    /* Contact Layout */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    /* Contact Info */
+    .contact-info__item {
+      margin-bottom: 32px;
+    }
+
+    .contact-info__item:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-info__label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .contact-info__value {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .contact-info__value a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-info__value a:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .contact-info__description {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--slate);
+      margin: 8px 0 0 0;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadowSoft);
+    }
+
+    .contact-form__title {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0 0 20px 0;
+      color: var(--ink);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group:last-of-type {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .form-group label .required {
+      color: var(--negative);
+      margin-left: 2px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 15px;
+      font-family: inherit;
+      color: var(--ink);
+      background: var(--surface);
+      transition: border-color 150ms ease, box-shadow 150ms ease;
+    }
+
+    .form-group select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234B5563' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
+    }
+
+    .form-group textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: rgba(15, 118, 110, 0.45);
+      box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+    }
+
+    .form-hint {
+      font-size: 13px;
+      color: var(--slate);
+      margin: 6px 0 0 0;
+    }
+
+    .submit-btn {
+      width: 100%;
+      height: 48px;
+      font-size: 16px;
+    }
+
+    /* FAQ Section */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .faq-item__question {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+      color: var(--ink);
+    }
+
+    .faq-item__answer {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--slate);
+      margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .contact-hero {
+        padding: 48px 0 32px;
+      }
+
+      .contact-form {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip Link for Accessibility -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header / Navbar -->
+  <header class="site-header" role="banner">
+    <nav class="navbar" aria-label="Primary">
+      <div class="navbar__inner">
+
+        <!-- Logo -->
+        <a class="brand" href="/">
+          <img src="/images/logo.svg" alt="Base Pivot - Montreal Real Estate" class="brand__logo" width="140" height="32" />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <ul class="nav" role="list">
+          <li class="nav__item">
+            <a class="nav__link" href="/insights">Insights</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="/neighborhoods">Neighborhoods</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="/tools">Tools</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="/about">About</a>
+          </li>
+        </ul>
+
+        <!-- Right Actions -->
+        <div class="navbar__actions">
+          <a class="btn btn--primary" href="/join">Join Free</a>
+
+          <!-- Mobile Toggle -->
+          <button class="icon-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span class="icon-btn__bars" aria-hidden="true"></span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu" hidden>
+        <ul class="mobile-menu__list" role="list">
+          <li><a class="mobile-menu__link" href="/insights">Insights</a></li>
+          <li><a class="mobile-menu__link" href="/neighborhoods">Neighborhoods</a></li>
+          <li><a class="mobile-menu__link" href="/tools">Tools</a></li>
+          <li><a class="mobile-menu__link" href="/about">About</a></li>
+        </ul>
+        <div class="mobile-menu__actions">
+          <a class="btn btn--primary btn--full" href="/join">Join Free</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+      <div class="container">
+        <div class="contact-hero__content">
+          <h1 class="contact-hero__title">Let's Talk</h1>
+          <p class="contact-hero__subtitle">
+            Have a specific question about the Montreal market? Looking for personalized insights? We're here to help.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- Left: Contact Info -->
+          <div class="contact-info">
+            <div class="contact-info__item">
+              <span class="contact-info__label">Email</span>
+              <p class="contact-info__value">
+                <a href="mailto:hello@basepivot.com">hello@basepivot.com</a>
+              </p>
+              <p class="contact-info__description">
+                We typically respond within 24 hours on weekdays.
+              </p>
+            </div>
+
+            <div class="contact-info__item">
+              <span class="contact-info__label">Location</span>
+              <p class="contact-info__value">
+                Montreal, Quebec<br>Canada
+              </p>
+              <p class="contact-info__description">
+                We're a local team focused exclusively on the Montreal market.
+              </p>
+            </div>
+
+            <div class="contact-info__item">
+              <span class="contact-info__label">For Media Inquiries</span>
+              <p class="contact-info__value">
+                <a href="mailto:media@basepivot.com">media@basepivot.com</a>
+              </p>
+              <p class="contact-info__description">
+                Press inquiries, interview requests, and partnership opportunities.
+              </p>
+            </div>
+
+            <div class="contact-info__item">
+              <span class="contact-info__label">Connect</span>
+              <p class="contact-info__value">
+                <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a> •
+                <a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a> •
+                <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+              </p>
+              <p class="contact-info__description">
+                Follow us for daily market updates and insights.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: Contact Form -->
+          <div class="contact-form">
+            <h2 class="contact-form__title">Send us a message</h2>
+
+            <form action="#" method="post">
+              <div class="form-group">
+                <label for="name">
+                  Your Name <span class="required">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="John Doe"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">
+                  Email Address <span class="required">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="john@example.com"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">
+                  Subject <span class="required">*</span>
+                </label>
+                <select id="subject" name="subject" required>
+                  <option value="">Select a subject</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="market">Market Question</option>
+                  <option value="neighborhood">Neighborhood Question</option>
+                  <option value="tools">Tools & Calculator</option>
+                  <option value="partnership">Partnership Opportunity</option>
+                  <option value="media">Media Inquiry</option>
+                  <option value="feedback">Feedback or Suggestion</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">
+                  Message <span class="required">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  placeholder="Tell us about your situation or question..."
+                ></textarea>
+                <p class="form-hint">
+                  The more context you provide, the better we can help.
+                </p>
+              </div>
+
+              <button type="submit" class="btn btn--primary submit-btn">
+                Send Message
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section--muted">
+      <div class="container">
+        <h2 class="text-center mb-5">Common Questions</h2>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3 class="faq-item__question">Do you provide real estate agent services?</h3>
+            <p class="faq-item__answer">
+              No, we are not real estate agents. We are an independent research platform focused on providing market insights, neighborhood intelligence, and decision-making tools. We do not buy, sell, or list properties.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__question">Can you help me find a specific property?</h3>
+            <p class="faq-item__answer">
+              We don't help with property searches, but we can provide context about neighborhoods, market conditions, and decision frameworks that will help you evaluate properties you're considering.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__question">Do you offer personalized consulting?</h3>
+            <p class="faq-item__answer">
+              We offer limited personalized consulting for people actively making real estate decisions in Montreal. Contact us to discuss your situation and we'll let you know if we can help.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__question">How much does Base Pivot cost?</h3>
+            <p class="faq-item__answer">
+              Our newsletter, insights, neighborhood profiles, and tools are completely free. We may introduce premium features in the future, but our core content will always remain accessible.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__question">Can I use your data for my own project?</h3>
+            <p class="faq-item__answer">
+              We're open to partnerships and data sharing for legitimate research or educational purposes. Please reach out to discuss your specific needs and we'll see if we can help.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__question">How can I support Base Pivot?</h3>
+            <p class="faq-item__answer">
+              The best way to support us is to share our content with people who would find it useful and subscribe to our newsletter. We also welcome feedback and suggestions for new features or content.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="section">
+      <div class="container" style="max-width: 700px; text-align: center;">
+        <h2 class="mb-3">Get Weekly Market Updates</h2>
+        <p class="text-lg text-slate mb-4">
+          Join our free newsletter for weekly insights on the Montreal real estate market.
+        </p>
+        <a class="btn btn--primary btn--lg" href="/join">Join Free Newsletter</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer__inner">
+
+      <!-- Column 1: Brand -->
+      <div class="footer__col footer__brand">
+        <a class="footer__logo" href="/">
+          <span class="footer__logoName">Base Pivot</span>
+          <span class="footer__logoSub">Montreal Real Estate</span>
+        </a>
+
+        <p class="footer__tagline">
+          Local insight for smarter Montreal real estate decisions.
+        </p>
+
+        <div class="footer__social" aria-label="Social links">
+          <a class="footer__socialLink" href="https://linkedin.com" rel="noopener" target="_blank">LinkedIn</a>
+          <a class="footer__socialLink" href="https://youtube.com" rel="noopener" target="_blank">YouTube</a>
+          <a class="footer__socialLink" href="https://instagram.com" rel="noopener" target="_blank">Instagram</a>
+        </div>
+      </div>
+
+      <!-- Column 2: Explore -->
+      <nav class="footer__col" aria-label="Explore">
+        <h3 class="footer__heading">Explore</h3>
+        <ul class="footer__list" role="list">
+          <li><a class="footer__link" href="/insights">Market Insights</a></li>
+          <li><a class="footer__link" href="/neighborhoods">Montreal Neighborhoods</a></li>
+          <li><a class="footer__link" href="/market-brief">Market Brief</a></li>
+          <li><a class="footer__link" href="/about">About</a></li>
+          <li><a class="footer__link" href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Column 3: Tools -->
+      <nav class="footer__col" aria-label="Tools">
+        <h3 class="footer__heading">Tools</h3>
+        <ul class="footer__list" role="list">
+          <li><a class="footer__link" href="/tools/rent-vs-buy-montreal">Rent vs Buy Calculator</a></li>
+          <li><a class="footer__link" href="/tools/mortgage-affordability-montreal">Mortgage Affordability</a></li>
+          <li><a class="footer__link" href="/tools/cash-flow-rental-property">Rental Cash Flow</a></li>
+          <li><a class="footer__link" href="/tools/closing-costs-quebec">Closing Costs in Quebec</a></li>
+        </ul>
+      </nav>
+
+      <!-- Column 4: Join + Legal -->
+      <div class="footer__col footer__cta">
+        <h3 class="footer__heading">Join Free</h3>
+        <p class="footer__ctaText">
+          Get a short weekly update on what changed in the Montreal market and what to watch next.
+        </p>
+
+        <form class="footer__form" action="/join" method="get">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input
+            class="footer__input"
+            id="footer-email"
+            name="email"
+            type="email"
+            placeholder="Email address"
+            autocomplete="email"
+            required
+          />
+          <button class="btn btn--primary footer__btn" type="submit">Join Free</button>
+        </form>
+
+        <p class="footer__fineprint">
+          No spam. Unsubscribe anytime.
+        </p>
+
+        <div class="footer__meta">
+          <a class="footer__metaLink" href="/legal/privacy">Privacy</a>
+          <a class="footer__metaLink" href="/legal/terms">Terms</a>
+          <a class="footer__metaLink" href="/legal/disclaimer">Disclaimer</a>
+          <a class="footer__metaLink" href="/sources">Sources</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer__bottom">
+      <div class="footer__bottomInner">
+        <p class="footer__copyright">
+          © <span id="year"></span> Base Pivot. Montreal, Quebec.
+        </p>
+
+        <p class="footer__disclaimer">
+          Information is provided for educational purposes and does not constitute financial, legal, or real estate advice.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/navbar.js"></script>
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plateau Mont-Royal Real Estate Guide | Base Pivot Montreal</title>
+  <meta name="description" content="Complete guide to buying in Plateau Mont-Royal: market trends, pricing, character, walkability, and who it fits. Expert neighborhood analysis.">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <style>
+    .neighborhood-header {
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.03) 0%, rgba(15, 118, 110, 0.08) 100%);
+      padding: 64px 0 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .neighborhood-header__content {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+    .neighborhood-header__title {
+      margin-bottom: 12px;
+    }
+    .neighborhood-header__tagline {
+      font-size: 20px;
+      line-height: 1.6;
+      color: var(--slate);
+      margin: 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto 48px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+    }
+    .stat-card__value {
+      display: block;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .stat-card__label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--slate);
+    }
+    .neighborhood-content {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+    .neighborhood-content h2 {
+      margin: 48px 0 20px 0;
+    }
+    .neighborhood-content h2:first-child {
+      margin-top: 0;
+    }
+    .neighborhood-content h3 {
+      margin: 28px 0 12px 0;
+      font-size: 20px;
+    }
+    .neighborhood-content p {
+      margin: 0 0 20px 0;
+      line-height: 1.8;
+      color: var(--slate);
+      font-size: 17px;
+    }
+    .neighborhood-content ul {
+      margin: 0 0 24px 0;
+      padding-left: 28px;
+    }
+    .neighborhood-content li {
+      margin-bottom: 10px;
+      line-height: 1.7;
+      color: var(--slate);
+      font-size: 17px;
+    }
+    .pros-cons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin: 32px 0;
+    }
+    .pros-cons__section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .pros-cons__title {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 16px 0;
+      color: var(--ink);
+    }
+    .pros-cons__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .pros-cons__list li {
+      padding-left: 28px;
+      position: relative;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+    .pros-cons__list li::before {
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+    }
+    .pros-cons__section--pros li::before {
+      content: "✓";
+      color: var(--positive);
+    }
+    .pros-cons__section--cons li::before {
+      content: "×";
+      color: var(--negative);
+    }
+    @media (max-width: 900px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .pros-cons {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" role="banner">
+    <nav class="navbar" aria-label="Primary">
+      <div class="navbar__inner">
+        <a class="brand" href="/">
+          <img src="/images/logo.svg" alt="Base Pivot - Montreal Real Estate" class="brand__logo" width="140" height="32" />
+        </a>
+        <ul class="nav" role="list">
+          <li class="nav__item"><a class="nav__link" href="/insights">Insights</a></li>
+          <li class="nav__item"><a class="nav__link" href="/neighborhoods">Neighborhoods</a></li>
+          <li class="nav__item"><a class="nav__link" href="/tools">Tools</a></li>
+          <li class="nav__item"><a class="nav__link" href="/about">About</a></li>
+        </ul>
+        <div class="navbar__actions">
+          <a class="btn btn--primary" href="/join">Join Free</a>
+          <button class="icon-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span class="icon-btn__bars" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobileMenu" hidden>
+        <ul class="mobile-menu__list" role="list">
+          <li><a class="mobile-menu__link" href="/insights">Insights</a></li>
+          <li><a class="mobile-menu__link" href="/neighborhoods">Neighborhoods</a></li>
+          <li><a class="mobile-menu__link" href="/tools">Tools</a></li>
+          <li><a class="mobile-menu__link" href="/about">About</a></li>
+        </ul>
+        <div class="mobile-menu__actions">
+          <a class="btn btn--primary btn--full" href="/join">Join Free</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="neighborhood-header">
+      <div class="container">
+        <div class="neighborhood-header__content">
+          <h1 class="neighborhood-header__title">Plateau Mont-Royal</h1>
+          <p class="neighborhood-header__tagline">
+            Montreal's most walkable and vibrant neighborhood. High demand, limited supply, premium pricing.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-card__value">$625K</span>
+            <span class="stat-card__label">Median Price</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__value">96</span>
+            <span class="stat-card__label">Walk Score</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__value">18 days</span>
+            <span class="stat-card__label">Avg. DOM</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__value">+3.2%</span>
+            <span class="stat-card__label">YoY Change</span>
+          </div>
+        </div>
+        <div class="neighborhood-content">
+          <h2>Character & Vibe</h2>
+          <p>
+            Plateau Mont-Royal is Montreal's iconic urban neighborhood. Tree-lined streets with colorful triplexes, outdoor staircases, and European-style cafes define the aesthetic. This is where you walk everywhere, grab coffee on the corner, and run into neighbors at the dep.
+          </p>
+          <p>
+            The Plateau attracts young professionals, creatives, and urban lifestyle seekers who prioritize walkability and culture over space and parking. It's loud, lively, and unapologetically urban. If you want a quiet suburban feel, look elsewhere.
+          </p>
+          <h2>Market Dynamics</h2>
+          <p>
+            The Plateau remains one of Montreal's tightest markets. Inventory is consistently low, properties sell quickly, and competition is fierce. Median prices have risen 3.2% year-over-year despite broader market cooling, reflecting sustained demand and limited supply.
+          </p>
+          <h3>Typical Buyers</h3>
+          <ul>
+            <li>First-time buyers prioritizing location over space</li>
+            <li>Young professionals who work downtown or remotely</li>
+            <li>Investors buying for strong rental demand</li>
+            <li>Downsizers moving from suburbs to walkable urban living</li>
+          </ul>
+          <h3>Housing Stock</h3>
+          <p>
+            Mostly triplexes, duplexes, and walk-up condos built between 1900-1940. Charming but often requiring renovation. Parking is rare and expensive. Outdoor space is limited to small balconies or shared yards. Expect old plumbing, uneven floors, and drafty windows unless recently renovated.
+          </p>
+          <h2>What You're Paying For</h2>
+          <p>
+            Plateau prices reflect location premium, not square footage. You're paying for:
+          </p>
+          <ul>
+            <li>Walk Score of 96 (everything accessible on foot)</li>
+            <li>Metro access (Mont-Royal, Sherbrooke, Laurier stations)</li>
+            <li>Cafe culture and restaurant density</li>
+            <li>Parks (Jeanne-Mance, La Fontaine) within walking distance</li>
+            <li>Strong rental market if you need to rent out later</li>
+          </ul>
+          <p>
+            You're not paying for modern finishes, parking, or spacious layouts. Those are scarce here.
+          </p>
+          <div class="pros-cons">
+            <div class="pros-cons__section pros-cons__section--pros">
+              <h3 class="pros-cons__title">Advantages</h3>
+              <ul class="pros-cons__list">
+                <li>Best walkability in Montreal</li>
+                <li>Strong rental demand (low vacancy)</li>
+                <li>Prices hold value during downturns</li>
+                <li>Cultural amenities and nightlife</li>
+                <li>Established neighborhood (not trendy, just solid)</li>
+                <li>Easy metro and bike access</li>
+              </ul>
+            </div>
+            <div class="pros-cons__section pros-cons__section--cons">
+              <h3 class="pros-cons__title">Trade-offs</h3>
+              <ul class="pros-cons__list">
+                <li>Premium pricing (highest per sqft in Montreal)</li>
+                <li>Low inventory, high competition</li>
+                <li>Limited parking (adds $30-50K+ for a spot)</li>
+                <li>Noise from bars, traffic, construction</li>
+                <li>Older buildings needing maintenance</li>
+                <li>Small living spaces compared to suburbs</li>
+              </ul>
+            </div>
+          </div>
+          <h2>Who It Fits</h2>
+          <p>
+            <strong>You'll love the Plateau if:</strong> You prioritize walkability over space. You don't own a car or don't mind paying for parking. You value urban energy and accept the noise that comes with it. You're comfortable with older buildings and quirky layouts.
+          </p>
+          <p>
+            <strong>Look elsewhere if:</strong> You need parking, outdoor space, or modern finishes. You prefer quiet residential streets. You have kids and want a yard. You're stretching financially and can't afford the premium.
+          </p>
+          <h2>Investment Perspective</h2>
+          <p>
+            The Plateau is a strong rental market. Vacancy rates hover around 1-2%, and demand from students, young professionals, and short-term renters is consistent. Cash flow can be challenging due to high purchase prices, but long-term appreciation and low vacancy make it relatively low-risk.
+          </p>
+          <p>
+            If you're buying to rent out, focus on properties near metro stations and with in-unit laundry. Parking is a major advantage for rental appeal.
+          </p>
+          <h2>What to Watch</h2>
+          <ul>
+            <li><strong>Gentrification pressure:</strong> Some sub-areas are becoming less affordable for long-term residents</li>
+            <li><strong>Building maintenance:</strong> Many buildings need major work (roof, foundation, plumbing)</li>
+            <li><strong>Condo conversion rules:</strong> Quebec regulations on converting rental buildings to condos</li>
+            <li><strong>New development:</strong> Limited, but any new supply affects pricing dynamics</li>
+          </ul>
+          <hr style="margin: 48px 0; border: none; border-top: 1px solid var(--border);">
+          <p style="font-size: 15px;">
+            <strong>Exploring other neighborhoods?</strong> Check out our <a href="/neighborhoods">full neighborhood guide</a> to compare options across Montreal.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__col footer__brand">
+        <a class="footer__logo" href="/">
+          <span class="footer__logoName">Base Pivot</span>
+          <span class="footer__logoSub">Montreal Real Estate</span>
+        </a>
+        <p class="footer__tagline">Local insight for smarter Montreal real estate decisions.</p>
+        <div class="footer__social" aria-label="Social links">
+          <a class="footer__socialLink" href="https://linkedin.com" rel="noopener" target="_blank">LinkedIn</a>
+          <a class="footer__socialLink" href="https://youtube.com" rel="noopener" target="_blank">YouTube</a>
+          <a class="footer__socialLink" href="https://instagram.com" rel="noopener" target="_blank">Instagram</a>
+        </div>
+      </div>
+      <nav class="footer__col" aria-label="Explore">
+        <h3 class="footer__heading">Explore</h3>
+        <ul class="footer__list" role="list">
+          <li><a class="footer__link" href="/insights">Market Insights</a></li>
+          <li><a class="footer__link" href="/neighborhoods">Montreal Neighborhoods</a></li>
+          <li><a class="footer__link" href="/market-brief">Market Brief</a></li>
+          <li><a class="footer__link" href="/about">About</a></li>
+          <li><a class="footer__link" href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="footer__col" aria-label="Tools">
+        <h3 class="footer__heading">Tools</h3>
+        <ul class="footer__list" role="list">
+          <li><a class="footer__link" href="/tools/rent-vs-buy-montreal">Rent vs Buy Calculator</a></li>
+          <li><a class="footer__link" href="/tools/mortgage-affordability-montreal">Mortgage Affordability</a></li>
+          <li><a class="footer__link" href="/tools/cash-flow-rental-property">Rental Cash Flow</a></li>
+          <li><a class="footer__link" href="/tools/closing-costs-quebec">Closing Costs in Quebec</a></li>
+        </ul>
+      </nav>
+      <div class="footer__col footer__cta">
+        <h3 class="footer__heading">Join Free</h3>
+        <p class="footer__ctaText">Get a short weekly update on what changed in the Montreal market and what to watch next.</p>
+        <form class="footer__form" action="/join" method="get">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input class="footer__input" id="footer-email" name="email" type="email" placeholder="Email address" autocomplete="email" required />
+          <button class="btn btn--primary footer__btn" type="submit">Join Free</button>
+        </form>
+        <p class="footer__fineprint">No spam. Unsubscribe anytime.</p>
+        <div class="footer__meta">
+          <a class="footer__metaLink" href="/legal/privacy">Privacy</a>
+          <a class="footer__metaLink" href="/legal/terms">Terms</a>
+          <a class="footer__metaLink" href="/legal/disclaimer">Disclaimer</a>
+          <a class="footer__metaLink" href="/sources">Sources</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__bottomInner">
+        <p class="footer__copyright">© <span id="year"></span> Base Pivot. Montreal, Quebec.</p>
+        <p class="footer__disclaimer">Information is provided for educational purposes and does not constitute financial, legal, or real estate advice.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/footer.js"></script>
+</body>
+</html>

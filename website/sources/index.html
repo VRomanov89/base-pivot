@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sources & Methodology | Base Pivot</title>
+  <meta name="description" content="Where our data comes from and how we analyze Montreal real estate market information. Transparent sources and methodology.">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <style>
+    .sources-hero {
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.03) 0%, rgba(15, 118, 110, 0.08) 100%);
+      padding: 64px 0 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .sources-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .sources-content h2 {
+      margin: 48px 0 20px 0;
+    }
+    .sources-content h2:first-child {
+      margin-top: 0;
+    }
+    .sources-content h3 {
+      margin: 32px 0 12px 0;
+      font-size: 20px;
+    }
+    .sources-content p {
+      margin: 0 0 16px 0;
+      line-height: 1.7;
+      color: var(--slate);
+    }
+    .sources-content ul {
+      margin: 0 0 20px 0;
+      padding-left: 24px;
+    }
+    .sources-content li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+      color: var(--slate);
+    }
+    .sources-content a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .sources-content a:hover {
+      color: var(--accentHover);
+    }
+    .source-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .source-card__name {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      color: var(--ink);
+    }
+    .source-card__description {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--slate);
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" role="banner">
+    <nav class="navbar" aria-label="Primary">
+      <div class="navbar__inner">
+        <a class="brand" href="/">
+          <img src="/images/logo.svg" alt="Base Pivot - Montreal Real Estate" class="brand__logo" width="140" height="32" />
+        </a>
+        <ul class="nav" role="list">
+          <li class="nav__item"><a class="nav__link" href="/insights">Insights</a></li>
+          <li class="nav__item"><a class="nav__link" href="/neighborhoods">Neighborhoods</a></li>
+          <li class="nav__item"><a class="nav__link" href="/tools">Tools</a></li>
+          <li class="nav__item"><a class="nav__link" href="/about">About</a></li>
+        </ul>
+        <div class="navbar__actions">
+          <a class="btn btn--primary" href="/join">Join Free</a>
+          <button class="icon-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span class="icon-btn__bars" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobileMenu" hidden>
+        <ul class="mobile-menu__list" role="list">
+          <li><a class="mobile-menu__link" href="/insights">Insights</a></li>
+          <li><a class="mobile-menu__link" href="/neighborhoods">Neighborhoods</a></li>
+          <li><a class="mobile-menu__link" href="/tools">Tools</a></li>
+          <li><a class="mobile-menu__link" href="/about">About</a></li>
+        </ul>
+        <div class="mobile-menu__actions">
+          <a class="btn btn--primary btn--full" href="/join">Join Free</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="sources-hero">
+      <div class="container">
+        <div style="max-width: 750px; margin: 0 auto; text-align: center;">
+          <h1>Sources & Methodology</h1>
+          <p class="text-lg text-slate" style="margin: 16px 0 0 0;">
+            Transparency matters. Here's where our data comes from and how we analyze Montreal real estate market information.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="sources-content">
+          <h2>Our Commitment</h2>
+          <p>
+            When we reference market data, we cite sources. When we make claims, we explain the context and assumptions. If something is our opinion or interpretation, we say so clearly. This page documents our primary data sources and analytical approach.
+          </p>
+          <h2>Primary Data Sources</h2>
+          <div class="source-card">
+            <h3 class="source-card__name">Greater Montreal Real Estate Board (GMREB)</h3>
+            <p class="source-card__description">
+              Official MLS statistics for Montreal and surrounding areas. We use their monthly reports for inventory levels, median prices, days on market, and sales volumes. Data is typically published within 5-7 days after month-end. <a href="https://www.gmreb.ca" target="_blank" rel="noopener">Visit GMREB</a>
+            </p>
+          </div>
+          <div class="source-card">
+            <h3 class="source-card__name">Canada Mortgage and Housing Corporation (CMHC)</h3>
+            <p class="source-card__description">
+              National housing data, rental market reports, and housing starts information. We reference their quarterly market reports and annual rental market surveys for vacancy rates and rental price trends. <a href="https://www.cmhc-schl.gc.ca" target="_blank" rel="noopener">Visit CMHC</a>
+            </p>
+          </div>
+          <div class="source-card">
+            <h3 class="source-card__name">Bank of Canada</h3>
+            <p class="source-card__description">
+              Interest rate decisions, economic indicators, and monetary policy statements that affect mortgage rates and borrowing conditions. <a href="https://www.bankofcanada.ca" target="_blank" rel="noopener">Visit Bank of Canada</a>
+            </p>
+          </div>
+          <div class="source-card">
+            <h3 class="source-card__name">Statistics Canada</h3>
+            <p class="source-card__description">
+              Census data, population trends, household income statistics, and demographic information used for neighborhood analysis. <a href="https://www.statcan.gc.ca" target="_blank" rel="noopener">Visit Statistics Canada</a>
+            </p>
+          </div>
+          <div class="source-card">
+            <h3 class="source-card__name">Ville de Montreal Open Data</h3>
+            <p class="source-card__description">
+              Municipal property assessment data, building permits, zoning information, and neighborhood boundaries. <a href="https://donnees.montreal.ca" target="_blank" rel="noopener">Visit Montreal Open Data</a>
+            </p>
+          </div>
+          <h2>Methodology</h2>
+          <h3>Market Trend Analysis</h3>
+          <p>
+            We track month-over-month and year-over-year changes in inventory, pricing, and sales velocity. When we identify trends, we look for:
+          </p>
+          <ul>
+            <li>Consistency across multiple data points (not isolated spikes)</li>
+            <li>Context relative to seasonal patterns</li>
+            <li>Comparison to historical averages (5-year and 10-year)</li>
+            <li>Neighborhood-level variation within broader market trends</li>
+          </ul>
+          <h3>Neighborhood Profiles</h3>
+          <p>
+            Our neighborhood analysis combines quantitative data (pricing, inventory, walk scores) with qualitative research (character, amenities, buyer profiles). We visit neighborhoods in person, speak with local agents, and review municipal planning documents.
+          </p>
+          <h3>Calculator Assumptions</h3>
+          <p>
+            Our tools use the following default assumptions, which you can adjust:
+          </p>
+          <ul>
+            <li><strong>Mortgage stress test:</strong> Qualification rate 2% above contract rate or 5.25%, whichever is higher (current OSFI rule)</li>
+            <li><strong>Property transfer tax (welcome tax):</strong> Quebec's progressive rate structure based on purchase price</li>
+            <li><strong>Closing costs:</strong> 3-4% of purchase price including legal, inspection, land transfer, insurance</li>
+            <li><strong>Rental vacancy rate:</strong> 2-4% annual vacancy assumption for investment properties</li>
+            <li><strong>Property appreciation:</strong> 2-4% annual average (long-term historical Montreal average)</li>
+          </ul>
+          <h3>What We Don't Do</h3>
+          <p>
+            To maintain credibility, we avoid:
+          </p>
+          <ul>
+            <li>Making specific price predictions or forecasts</li>
+            <li>Recommending timing decisions ("now is the time to buy")</li>
+            <li>Cherry-picking data to support predetermined narratives</li>
+            <li>Presenting correlation as causation without explanation</li>
+            <li>Claiming certainty where uncertainty exists</li>
+          </ul>
+          <h2>Limitations</h2>
+          <p>
+            All market data has limitations. MLS data represents reported sales, not all transactions. Government data has reporting lags. Our analysis reflects information available at time of publication. Markets change, and past performance doesn't guarantee future results.
+          </p>
+          <h2>Updates & Corrections</h2>
+          <p>
+            If we identify an error in our analysis or data, we correct it promptly and note the correction. If you spot something that looks wrong, please <a href="/contact">contact us</a>.
+          </p>
+          <h2>Questions?</h2>
+          <p>
+            If you have questions about our sources, methodology, or want to understand how we arrived at a specific conclusion, reach out. We're happy to explain our work.
+          </p>
+          <p>
+            <a class="btn btn--primary" href="/contact">Contact Us</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__col footer__brand">
+        <a class="footer__logo" href="/">
+          <span class="footer__logoName">Base Pivot</span>
+          <span class="footer__logoSub">Montreal Real Estate</span>
+        </a>
+        <p class="footer__tagline">Local insight for smarter Montreal real estate decisions.</p>
+        <div class="footer__social" aria-label="Social links">
+          <a class="footer__socialLink" href="https://linkedin.com" rel="noopener" target="_blank">LinkedIn</a>
+          <a class="footer__socialLink" href="https://youtube.com" rel="noopener" target="_blank">YouTube</a>
+          <a class="footer__socialLink" href="https://instagram.com" rel="noopener" target="_blank">Instagram</a>
+        </div>
+      </div>
+      <nav class="footer__col" aria-label="Explore">
+        <h3 class="footer__heading">Explore</h3>
+        <ul class="footer__list" role="list">
+          <li><a class="footer__link" href="/insights">Market Insights</a></li>
+          <li><a class="footer__link" href="/neighborhoods">Montreal Neighborhoods</a></li>
+          <li><a class="footer__link" href="/market-brief">Market Brief</a></li>
+          <li><a class="footer__link" href="/about">About</a></li>
+          <li><a class="footer__link" href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="footer__col" aria-label="Tools">
+        <h3 class="footer__heading">Tools</h3>
+        <ul class="footer__list" role="list">
+          <li><a class="footer__link" href="/tools/rent-vs-buy-montreal">Rent vs Buy Calculator</a></li>
+          <li><a class="footer__link" href="/tools/mortgage-affordability-montreal">Mortgage Affordability</a></li>
+          <li><a class="footer__link" href="/tools/cash-flow-rental-property">Rental Cash Flow</a></li>
+          <li><a class="footer__link" href="/tools/closing-costs-quebec">Closing Costs in Quebec</a></li>
+        </ul>
+      </nav>
+      <div class="footer__col footer__cta">
+        <h3 class="footer__heading">Join Free</h3>
+        <p class="footer__ctaText">Get a short weekly update on what changed in the Montreal market and what to watch next.</p>
+        <form class="footer__form" action="/join" method="get">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input class="footer__input" id="footer-email" name="email" type="email" placeholder="Email address" autocomplete="email" required />
+          <button class="btn btn--primary footer__btn" type="submit">Join Free</button>
+        </form>
+        <p class="footer__fineprint">No spam. Unsubscribe anytime.</p>
+        <div class="footer__meta">
+          <a class="footer__metaLink" href="/legal/privacy">Privacy</a>
+          <a class="footer__metaLink" href="/legal/terms">Terms</a>
+          <a class="footer__metaLink" href="/legal/disclaimer">Disclaimer</a>
+          <a class="footer__metaLink" href="/sources">Sources</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__bottomInner">
+        <p class="footer__copyright">© <span id="year"></span> Base Pivot. Montreal, Quebec.</p>
+        <p class="footer__disclaimer">Information is provided for educational purposes and does not constitute financial, legal, or real estate advice.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/footer.js"></script>
+</body>
+</html>

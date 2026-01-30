@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>About Base Pivot | Montreal Real Estate Intelligence</title>
+  <meta name="description" content="Learn about Base Pivot and the team behind Montreal's most trusted real estate intelligence platform.">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About Base Pivot | Montreal Real Estate Intelligence">
+  <meta property="og:description" content="Learn about Base Pivot and the team behind Montreal's most trusted real estate intelligence platform.">
+  <meta property="og:url" content="https://base-pivot.vercel.app/about">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+
+  <!-- Preconnect to fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+  <style>
+    /* About Page Specific Styles */
+    .about-hero {
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.03) 0%, rgba(15, 118, 110, 0.08) 100%);
+      padding: 64px 0 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-hero__content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-hero__title {
+      margin-bottom: 16px;
+    }
+
+    .about-hero__subtitle {
+      font-size: 20px;
+      line-height: 1.6;
+      color: var(--slate);
+      margin: 0 auto;
+      max-width: 650px;
+    }
+
+    /* Mission Section */
+    .mission {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .mission__text {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--slate);
+      margin-bottom: 20px;
+    }
+
+    .mission__text strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* Team Grid */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .team-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .team-card__image {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      background: linear-gradient(135deg, #0F766E 0%, #14B8A6 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 72px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .team-card__content {
+      padding: 24px;
+    }
+
+    .team-card__name {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 0 4px 0;
+      color: var(--ink);
+    }
+
+    .team-card__title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0 0 16px 0;
+    }
+
+    .team-card__bio {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--slate);
+      margin: 0 0 20px 0;
+    }
+
+    .team-card__social {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .team-card__social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--slate);
+      transition: color 150ms ease;
+    }
+
+    .team-card__social-link:hover {
+      color: var(--accent);
+    }
+
+    .team-card__social-icon {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* Values Section */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .value-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      text-align: center;
+    }
+
+    .value-item__icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .value-item__title {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      color: var(--ink);
+    }
+
+    .value-item__description {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--slate);
+      margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .about-hero {
+        padding: 48px 0 32px;
+      }
+
+      .about-hero__subtitle {
+        font-size: 17px;
+      }
+
+      .team-card__image {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip Link for Accessibility -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header / Navbar -->
+  <header class="site-header" role="banner">
+    <nav class="navbar" aria-label="Primary">
+      <div class="navbar__inner">
+
+        <!-- Logo -->
+        <a class="brand" href="/">
+          <img src="/images/logo.svg" alt="Base Pivot - Montreal Real Estate" class="brand__logo" width="140" height="32" />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <ul class="nav" role="list">
+          <li class="nav__item">
+            <a class="nav__link" href="/insights">Insights</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="/neighborhoods">Neighborhoods</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="/tools">Tools</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="/about" aria-current="page">About</a>
+          </li>
+        </ul>
+
+        <!-- Right Actions -->
+        <div class="navbar__actions">
+          <a class="btn btn--primary" href="/join">Join Free</a>
+
+          <!-- Mobile Toggle -->
+          <button class="icon-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span class="icon-btn__bars" aria-hidden="true"></span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu" hidden>
+        <ul class="mobile-menu__list" role="list">
+          <li><a class="mobile-menu__link" href="/insights">Insights</a></li>
+          <li><a class="mobile-menu__link" href="/neighborhoods">Neighborhoods</a></li>
+          <li><a class="mobile-menu__link" href="/tools">Tools</a></li>
+          <li><a class="mobile-menu__link" href="/about" aria-current="page">About</a></li>
+        </ul>
+        <div class="mobile-menu__actions">
+          <a class="btn btn--primary btn--full" href="/join">Join Free</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+      <div class="container">
+        <div class="about-hero__content">
+          <h1 class="about-hero__title">We built this for people like us</h1>
+          <p class="about-hero__subtitle">
+            When we started looking to buy in Montreal, we felt overwhelmed by listings and underserved by analysis. We built Base Pivot to change that.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="section">
+      <div class="container">
+        <div class="mission">
+          <h2 class="text-center mb-4">Our Mission</h2>
+
+          <p class="mission__text">
+            <strong>Most real estate platforms focus on listings.</strong> We focus on context. You do not need another place to search for properties. You need a place to understand what is happening in the market, how neighborhoods compare, and what matters when making your decision.
+          </p>
+
+          <p class="mission__text">
+            <strong>Base Pivot exists to help you make smarter real estate decisions in Montreal.</strong> We provide clear market insights, neighborhood intelligence, and practical tools that turn assumptions into scenarios. We explain trends, cite sources, and avoid hype.
+          </p>
+
+          <p class="mission__text">
+            <strong>We are not agents, lenders, or advertisers.</strong> We are independent researchers who believe that better information leads to better decisions. Everything we publish is designed to help you understand what is happening and what it means for your situation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section section--muted">
+      <div class="container">
+        <h2 class="text-center mb-5">Meet the Founders</h2>
+
+        <div class="team-grid">
+          <!-- Founder 1 -->
+          <div class="team-card">
+            <div class="team-card__image">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=600&fit=crop&crop=faces" alt="Alexandre Dubois" style="width: 100%; height: 100%; object-fit: cover;" />
+            </div>
+            <div class="team-card__content">
+              <h3 class="team-card__name">Alexandre Dubois</h3>
+              <p class="team-card__title">Co-Founder & Market Research</p>
+              <p class="team-card__bio">
+                Alexandre is a data analyst and former management consultant who spent years helping companies make sense of complex information. After navigating his own frustrating homebuying experience in Montreal, he decided to build the resource he wished existed. He focuses on market research, data analysis, and making insights accessible.
+              </p>
+              <div class="team-card__social">
+                <a class="team-card__social-link" href="https://linkedin.com" target="_blank" rel="noopener">
+                  <svg class="team-card__social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                  LinkedIn
+                </a>
+                <a class="team-card__social-link" href="https://twitter.com" target="_blank" rel="noopener">
+                  <svg class="team-card__social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                  Twitter
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Founder 2 -->
+          <div class="team-card">
+            <div class="team-card__image">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&crop=faces" alt="Thomas Bergeron" style="width: 100%; height: 100%; object-fit: cover;" />
+            </div>
+            <div class="team-card__content">
+              <h3 class="team-card__name">Thomas Bergeron</h3>
+              <p class="team-card__title">Co-Founder & Neighborhood Intelligence</p>
+              <p class="team-card__bio">
+                Thomas is a Montreal native and urban planning researcher who has tracked the city's real estate evolution for over a decade. He brings deep neighborhood knowledge and context that goes beyond price per square foot. Thomas focuses on neighborhood profiles, walkability analysis, and understanding what makes each area unique beyond the typical metrics.
+              </p>
+              <div class="team-card__social">
+                <a class="team-card__social-link" href="https://linkedin.com" target="_blank" rel="noopener">
+                  <svg class="team-card__social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                  LinkedIn
+                </a>
+                <a class="team-card__social-link" href="https://twitter.com" target="_blank" rel="noopener">
+                  <svg class="team-card__social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                  Twitter
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center mb-5">What Drives Us</h2>
+
+        <div class="values-grid">
+          <div class="value-item">
+            <div class="value-item__icon">📊</div>
+            <h3 class="value-item__title">Evidence-Based</h3>
+            <p class="value-item__description">
+              We cite our sources, explain our assumptions, and show our methodology. No claims without context.
+            </p>
+          </div>
+
+          <div class="value-item">
+            <div class="value-item__icon">🎯</div>
+            <h3 class="value-item__title">Context Over Hype</h3>
+            <p class="value-item__description">
+              We focus on what matters: trends, trade-offs, and practical scenarios. No sensational headlines or fear-mongering.
+            </p>
+          </div>
+
+          <div class="value-item">
+            <div class="value-item__icon">🔓</div>
+            <h3 class="value-item__title">Independent</h3>
+            <p class="value-item__description">
+              We are not agents, lenders, or sponsored by advertisers. Our only goal is to help you make better decisions.
+            </p>
+          </div>
+
+          <div class="value-item">
+            <div class="value-item__icon">🏙️</div>
+            <h3 class="value-item__title">Montreal-Focused</h3>
+            <p class="value-item__description">
+              We only cover Montreal. This allows us to go deep on neighborhood nuances and local market dynamics.
+            </p>
+          </div>
+
+          <div class="value-item">
+            <div class="value-item__icon">🧮</div>
+            <h3 class="value-item__title">Actionable Tools</h3>
+            <p class="value-item__description">
+              Our tools help you run scenarios and test assumptions. They turn "I think I can afford this" into actual numbers.
+            </p>
+          </div>
+
+          <div class="value-item">
+            <div class="value-item__icon">🤝</div>
+            <h3 class="value-item__title">Buyer-First</h3>
+            <p class="value-item__description">
+              We built this for people making real estate decisions, not for people selling them something.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section--muted">
+      <div class="container" style="max-width: 700px; text-align: center;">
+        <h2 class="mb-3">Join Our Community</h2>
+        <p class="text-lg text-slate mb-4">
+          Get weekly market updates, neighborhood insights, and practical tools delivered to your inbox. No spam, no hype, just useful information.
+        </p>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <a class="btn btn--primary btn--lg" href="/join">Join Free Newsletter</a>
+          <a class="btn btn--secondary btn--lg" href="/contact">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer__inner">
+
+      <!-- Column 1: Brand -->
+      <div class="footer__col footer__brand">
+        <a class="footer__logo" href="/">
+          <span class="footer__logoName">Base Pivot</span>
+          <span class="footer__logoSub">Montreal Real Estate</span>
+        </a>
+
+        <p class="footer__tagline">
+          Local insight for smarter Montreal real estate decisions.
+        </p>
+
+        <div class="footer__social" aria-label="Social links">
+          <a class="footer__socialLink" href="https://linkedin.com" rel="noopener" target="_blank">LinkedIn</a>
+          <a class="footer__socialLink" href="https://youtube.com" rel="noopener" target="_blank">YouTube</a>
+          <a class="footer__socialLink" href="https://instagram.com" rel="noopener" target="_blank">Instagram</a>
+        </div>
+      </div>
+
+      <!-- Column 2: Explore -->
+      <nav class="footer__col" aria-label="Explore">
+        <h3 class="footer__heading">Explore</h3>
+        <ul class="footer__list" role="list">
+          <li><a class="footer__link" href="/insights">Market Insights</a></li>
+          <li><a class="footer__link" href="/neighborhoods">Montreal Neighborhoods</a></li>
+          <li><a class="footer__link" href="/market-brief">Market Brief</a></li>
+          <li><a class="footer__link" href="/about">About</a></li>
+          <li><a class="footer__link" href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Column 3: Tools -->
+      <nav class="footer__col" aria-label="Tools">
+        <h3 class="footer__heading">Tools</h3>
+        <ul class="footer__list" role="list">
+          <li><a class="footer__link" href="/tools/rent-vs-buy-montreal">Rent vs Buy Calculator</a></li>
+          <li><a class="footer__link" href="/tools/mortgage-affordability-montreal">Mortgage Affordability</a></li>
+          <li><a class="footer__link" href="/tools/cash-flow-rental-property">Rental Cash Flow</a></li>
+          <li><a class="footer__link" href="/tools/closing-costs-quebec">Closing Costs in Quebec</a></li>
+        </ul>
+      </nav>
+
+      <!-- Column 4: Join + Legal -->
+      <div class="footer__col footer__cta">
+        <h3 class="footer__heading">Join Free</h3>
+        <p class="footer__ctaText">
+          Get a short weekly update on what changed in the Montreal market and what to watch next.
+        </p>
+
+        <form class="footer__form" action="/join" method="get">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input
+            class="footer__input"
+            id="footer-email"
+            name="email"
+            type="email"
+            placeholder="Email address"
+            autocomplete="email"
+            required
+          />
+          <button class="btn btn--primary footer__btn" type="submit">Join Free</button>
+        </form>
+
+        <p class="footer__fineprint">
+          No spam. Unsubscribe anytime.
+        </p>
+
+        <div class="footer__meta">
+          <a class="footer__metaLink" href="/legal/privacy">Privacy</a>
+          <a class="footer__metaLink" href="/legal/terms">Terms</a>
+          <a class="footer__metaLink" href="/legal/disclaimer">Disclaimer</a>
+          <a class="footer__metaLink" href="/sources">Sources</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer__bottom">
+      <div class="footer__bottomInner">
+        <p class="footer__copyright">
+          © <span id="year"></span> Base Pivot. Montreal, Quebec.
+        </p>
+
+        <p class="footer__disclaimer">
+          Information is provided for educational purposes and does not constitute financial, legal, or real estate advice.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/navbar.js"></script>
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>
