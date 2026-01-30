@@ -1,0 +1,298 @@
+Homepage goals
+
+Communicate what you are in 5 seconds
+
+Convert to newsletter with “Join Free”
+
+Prove credibility with methodology and sources
+
+Route visitors into SEO hubs: Insights, Neighborhoods, Tools
+
+Stay fast and stable (Core Web Vitals)
+
+Google’s Core Web Vitals targets to hit from day one: CLS under 0.1 and the CWV guidance is framed around stability and performance.
+
+Technical and SEO constraints for the homepage
+
+One H1 only
+
+All nav and footer links are real <a href> links
+
+Content is server-rendered or statically rendered
+
+Hero image is decorative or small, never heavy
+
+No layout shift on load, set image widths and heights to prevent CLS
+
+Mobile-first, no hidden primary content behind accordions
+
+Internal links support hub-and-spoke structure (home links to hubs, hubs link to articles)
+
+Newsletter flow meets CASL basics, include unsubscribe and identification in emails
+
+Homepage structure and copy
+Section 1: Hero
+
+Purpose: clarity + conversion
+
+H1
+Make smarter real estate decisions in Montreal
+
+Subheadline
+Local market context, neighborhood intelligence, and practical tools that help you decide with confidence.
+
+Primary CTA
+Join Free
+
+Secondary CTA
+Explore Market Insights
+
+Micro trust line
+Short weekly brief. No hype. Unsubscribe anytime.
+
+Hero right-side visual
+A lightweight “market snapshot” card stack (HTML/CSS, no heavy charts):
+
+Inventory trend: Up, Down, Stable
+
+Mortgage rate context: “Rates influence affordability more than most people expect”
+
+Neighborhood highlight: “Verdun, Plateau, Rosemont, Griffintown”
+
+Implementation notes
+
+Avoid heavy imagery. Use a subtle Montreal photo only if it is optimized and sized, or use an abstract gradient and UI cards.
+
+Keep hero under 650px height on desktop, 560px on mobile.
+
+Section 2: What this is
+
+Purpose: positioning without sounding like an agent
+
+Headline
+Not a listing site. Not a hype newsletter.
+
+Copy
+We built this for people who want to understand what is happening in the Montreal real estate market before making a move. We focus on signal, context, and practical decision support.
+
+Three bullets
+
+What changed in the market and why it matters
+
+How neighborhoods differ beyond price
+
+Tools that turn assumptions into scenarios
+
+Section 3: How it helps
+
+Purpose: value props, scannable
+
+Headline
+What you get here
+
+3 cards
+
+Market Insights
+Clear explanations of trends, inventory, pricing, and buyer conditions.
+
+Neighborhood Intelligence
+How areas behave differently, who they fit, and what first-time buyers miss.
+
+Practical Tools
+Affordability, rent vs buy, cash flow, and closing cost scenarios.
+
+Each card CTA:
+
+Read Insights
+
+Explore Neighborhoods
+
+View Tools
+
+Section 4: Weekly Brief preview (Primary conversion block)
+
+Purpose: double down on Join Free
+
+Headline
+The Montreal Market Brief
+
+Copy
+A short weekly update that covers what changed, what it means, and what to watch next. Written to be useful even if you are not buying this month.
+
+What is included list
+
+A simple market snapshot
+
+One neighborhood highlight
+
+One decision scenario example
+
+One thing to watch next week
+
+Form
+Email input + Join Free button
+
+Compliance microcopy
+No spam. Unsubscribe anytime.
+
+Section 5: Featured Insights (SEO hub routing)
+
+Purpose: push people into content clusters
+
+Headline
+Start with these insights
+
+3 article cards
+
+Montreal real estate market trends: what is changing and why
+
+Rent vs buy in Montreal: a practical breakdown
+
+What inventory shifts really mean for buyers
+
+CTA
+See all insights
+
+Implementation notes
+
+These should link to hub pages or cornerstone articles.
+
+Each card has a category label, title, and a 2-line summary.
+
+Section 6: Neighborhood Explorer preview
+
+Purpose: local intelligence and SEO entry point
+
+Headline
+Neighborhoods are not interchangeable
+
+Copy
+Price is only one part of the decision. We break down the tradeoffs that matter: housing stock, walkability, typical buyer profiles, rental demand, and how the market behaves.
+
+Neighborhood quick links
+Plateau Mont Royal
+Verdun
+Rosemont
+Griffintown
+Ahuntsic Cartierville
+NDG
+
+CTA
+Explore all neighborhoods
+
+SEO note
+These pages become your strongest local SEO moat over time.
+
+Section 7: Tools preview
+
+Purpose: utility, trust, backlinks later
+
+Headline
+Tools that make decisions clearer
+
+4 tool cards
+
+Mortgage affordability (Montreal)
+
+Rent vs buy (Montreal)
+
+Rental cash flow estimator
+
+Closing costs in Quebec
+
+CTA
+View all tools
+
+Implementation notes
+
+Tools pages should have content, assumptions, and explanations.
+
+Tools are a natural backlink magnet.
+
+Section 8: Methodology and sources (trust asset)
+
+Purpose: credibility without bragging
+
+Headline
+Where the numbers come from
+
+Copy
+When we reference market data, we cite sources and explain assumptions. When we make a claim, we aim to show the context behind it.
+
+Links
+Sources and Methodology
+Disclaimer
+
+Implementation notes
+Keep this section short on the homepage. The detail lives on /sources.
+
+Section 9: Contact or “Talk to an Expert”
+
+Purpose: high-intent path, soft sell
+
+Headline
+Have a specific situation?
+
+Copy
+If you are actively considering a purchase, sale, or income property, you can reach out for a practical conversation focused on your decision.
+
+CTA
+Contact
+
+Section 10: Footer
+
+Use the footer spec we already built, with the four links:
+Privacy, Terms, Disclaimer, Sources.
+
+Responsive design rules
+Desktop
+
+Max width: 1280px
+
+12-column grid
+
+Hero split 6/6 or 7/5
+
+Section spacing: 72px between major sections
+
+Tablet
+
+Hero becomes stacked
+
+Cards become 2-column
+
+Mobile
+
+Single column
+
+Keep CTAs above the fold
+
+Reduce large text slightly, keep line length readable
+
+Homepage metadata spec (copy ready)
+
+Title tag
+Montreal Real Estate Insights and Tools | BrandName
+
+Meta description
+Clear market insights, neighborhood intelligence, and practical tools to help you make smarter real estate decisions in Montreal.
+
+Open Graph
+
+OG title mirrors title tag
+
+OG description mirrors meta
+
+OG image: a clean branded card, not a photo
+
+Claude Code handoff checklist
+
+Build as a component-based page with sections as independent components
+
+No third-party sliders or heavy animation libraries
+
+Prefetch internal links if your framework supports it
+
+Make “Join Free” CTA consistent with navbar
+
+Ensure no CLS by setting all image sizes and using stable font loading

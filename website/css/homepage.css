@@ -1,0 +1,586 @@
+/* ============================================
+   HOMEPAGE SECTIONS
+   All homepage-specific component styles
+   ============================================ */
+
+/* Hero Section */
+.hero {
+  padding: 80px 0 64px;
+  background: linear-gradient(180deg, var(--surfaceMuted) 0%, var(--surface) 100%);
+}
+
+.hero__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero__title {
+  margin: 0;
+  line-height: 1.1;
+}
+
+.hero__subtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--slate);
+  margin: 0;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.hero__trust {
+  font-size: 14px;
+  color: var(--slate);
+  margin: 8px 0 0 0;
+}
+
+.hero__visual {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.market-snapshot {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadowSoft);
+}
+
+.market-snapshot__title {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--accent);
+  margin: 0 0 12px 0;
+}
+
+.market-snapshot__item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.market-snapshot__item:last-child {
+  border-bottom: none;
+}
+
+.market-snapshot__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.market-snapshot__value {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.market-snapshot__neighborhoods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.market-snapshot__tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--surfaceMuted);
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Positioning Section */
+.positioning {
+  text-align: center;
+}
+
+.positioning__title {
+  margin-bottom: 16px;
+}
+
+.positioning__description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--slate);
+  max-width: 70ch;
+  margin: 0 auto 32px;
+}
+
+.positioning__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.positioning__list li {
+  padding: 12px 0 12px 32px;
+  position: relative;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.positioning__list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* Value Props Section */
+.value-props__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.value-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+.value-card:hover {
+  box-shadow: var(--shadowSoft);
+  transform: translateY(-2px);
+}
+
+.value-card__icon {
+  width: 48px;
+  height: 48px;
+  background: var(--surfaceMuted);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+.value-card__title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+}
+
+.value-card__description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--slate);
+  margin: 0 0 16px 0;
+}
+
+.value-card__link {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.value-card__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Newsletter Section */
+.newsletter {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accentHover) 100%);
+  color: #fff;
+  text-align: center;
+}
+
+.newsletter__title {
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.newsletter__description {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 60ch;
+  margin: 0 auto 24px;
+  opacity: 0.95;
+}
+
+.newsletter__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 32px;
+  max-width: 500px;
+  text-align: left;
+}
+
+.newsletter__features li {
+  padding: 8px 0 8px 28px;
+  position: relative;
+  font-size: 15px;
+  opacity: 0.95;
+}
+
+.newsletter__features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+}
+
+.newsletter__form {
+  max-width: 480px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+}
+
+.newsletter__input {
+  height: 52px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 0 16px;
+  font-size: 15px;
+  color: #fff;
+  font-family: inherit;
+}
+
+.newsletter__input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletter__input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.newsletter__btn {
+  height: 52px;
+  background: #fff;
+  color: var(--accent);
+  font-weight: 700;
+  padding: 0 28px;
+  white-space: nowrap;
+}
+
+.newsletter__btn:hover {
+  background: var(--surfaceMuted);
+  transform: translateY(-1px);
+}
+
+.newsletter__fineprint {
+  margin-top: 12px;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* Featured Insights Section */
+.insights__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.insights__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.insight-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: box-shadow 200ms ease, transform 200ms ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.insight-card:hover {
+  box-shadow: var(--shadowSoft);
+  transform: translateY(-2px);
+}
+
+.insight-card__content {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.insight-card__label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.insight-card__title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.insight-card__summary {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--slate);
+  margin: 0;
+  flex: 1;
+}
+
+.insights__cta {
+  text-align: center;
+}
+
+/* Neighborhoods Section */
+.neighborhoods__header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.neighborhoods__description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--slate);
+  max-width: 70ch;
+  margin: 0 auto 32px;
+}
+
+.neighborhoods__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.neighborhood-link {
+  display: block;
+  padding: 16px 20px;
+  background: var(--surfaceMuted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+  transition: background-color 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+
+.neighborhood-link:hover {
+  background: var(--surface);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.neighborhoods__cta {
+  text-align: center;
+}
+
+/* Tools Section */
+.tools__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.tools__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.tool-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-decoration: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+.tool-card:hover {
+  box-shadow: var(--shadowSoft);
+  transform: translateY(-2px);
+}
+
+.tool-card__icon {
+  width: 48px;
+  height: 48px;
+  background: var(--surfaceMuted);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 24px;
+}
+
+.tool-card__content {
+  flex: 1;
+}
+
+.tool-card__title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: var(--ink);
+}
+
+.tool-card__description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--slate);
+  margin: 0;
+}
+
+.tools__cta {
+  text-align: center;
+}
+
+/* Methodology Section */
+.methodology {
+  background: var(--surfaceMuted);
+  text-align: center;
+}
+
+.methodology__title {
+  margin-bottom: 12px;
+}
+
+.methodology__description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--slate);
+  max-width: 70ch;
+  margin: 0 auto 24px;
+}
+
+.methodology__links {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Contact Section */
+.contact {
+  text-align: center;
+}
+
+.contact__title {
+  margin-bottom: 12px;
+}
+
+.contact__description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--slate);
+  max-width: 60ch;
+  margin: 0 auto 24px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1000px) {
+  .hero__container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero__visual {
+    order: -1;
+  }
+
+  .value-props__grid,
+  .insights__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .neighborhoods__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tools__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero {
+    padding: 48px 0 40px;
+  }
+
+  .hero__container {
+    padding: 0 16px;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+
+  .value-props__grid,
+  .insights__grid,
+  .neighborhoods__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter__form {
+    grid-template-columns: 1fr;
+  }
+
+  .positioning__description,
+  .neighborhoods__description,
+  .methodology__description,
+  .contact__description {
+    font-size: 16px;
+  }
+}

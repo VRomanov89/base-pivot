@@ -1,0 +1,234 @@
+/* ============================================
+   NAVBAR COMPONENT
+   Sticky header with scroll states
+   ============================================ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  height: var(--navH);
+  transition: height 200ms ease, background-color 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar.is-scrolled {
+  height: var(--navHScrolled);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadowSoft);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.navbar__inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+/* Brand/Logo */
+.brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1.1;
+}
+
+.brand__name {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+}
+
+.brand__sub {
+  font-size: 12px;
+  color: var(--slate);
+  margin-top: 2px;
+}
+
+/* Desktop Navigation */
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav__item {
+  margin: 0;
+}
+
+.nav__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 12px;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 999px;
+  transition: color 150ms ease, background-color 150ms ease;
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 0%;
+  border-radius: 999px;
+  background: var(--accent);
+  transition: width 160ms ease;
+}
+
+.nav__link:hover {
+  color: var(--accent);
+}
+
+.nav__link:hover::after {
+  width: 70%;
+}
+
+/* Active link state */
+.nav__link[aria-current="page"] {
+  color: var(--accent);
+}
+
+.nav__link[aria-current="page"]::after {
+  width: 70%;
+}
+
+/* Navbar Actions */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Mobile Menu Toggle Button */
+.icon-btn {
+  display: none;
+  height: 40px;
+  width: 44px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.icon-btn:hover {
+  border-color: var(--accent);
+  background: var(--surfaceMuted);
+}
+
+.icon-btn__bars {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--ink);
+  position: relative;
+  margin: 0 auto;
+}
+
+.icon-btn__bars::before,
+.icon-btn__bars::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  background: var(--ink);
+  transition: transform 200ms ease;
+}
+
+.icon-btn__bars::before {
+  top: -6px;
+}
+
+.icon-btn__bars::after {
+  top: 6px;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  padding: 14px 20px 18px;
+}
+
+.mobile-menu__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mobile-menu__link {
+  display: block;
+  padding: 12px 10px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.mobile-menu__link:hover {
+  background: var(--surfaceMuted);
+  color: var(--accent);
+}
+
+.mobile-menu__link[aria-current="page"] {
+  background: var(--surfaceMuted);
+  color: var(--accent);
+}
+
+.mobile-menu__actions {
+  margin-top: 12px;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .nav {
+    display: none;
+  }
+
+  .icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .brand__sub {
+    display: none;
+  }
+
+  .navbar__inner {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 620px) {
+  .brand__name {
+    font-size: 16px;
+  }
+}

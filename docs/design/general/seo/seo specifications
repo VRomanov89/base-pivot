@@ -1,0 +1,341 @@
+SEO-FIRST WEBSITE CONSTRAINTS
+
+Montreal Real Estate · Local Intelligence Platform
+
+1. Core SEO Philosophy (Non-Negotiable)
+Rule #1
+
+Structure beats content volume.
+Google rewards clarity, hierarchy, and intent alignment more than frequency.
+
+Rule #2
+
+Every page must answer one primary search intent.
+No blended intents. No “catch-all” pages.
+
+Rule #3
+
+Design must support crawling, indexing, and understanding.
+If a designer choice hurts clarity, SEO wins.
+
+2. Information Architecture (IA) Constraints
+Maximum depth
+
+Important pages must be reachable in ≤ 3 clicks
+
+Blog articles: max depth of 2 from homepage
+
+Required top-level sections
+
+Your site should have no more than 6 primary sections:
+
+/
+├── insights/
+├── market-brief/
+├── tools/
+├── neighborhoods/
+├── about/
+├── contact/
+
+
+Why:
+
+Clear topical clustering
+
+Predictable crawl paths
+
+Strong internal linking signals
+
+3. URL Structure Rules
+Absolute rules
+
+Lowercase only
+
+Hyphens only
+
+No dates in URLs
+
+No query strings for core content
+
+No “blog” in URLs unless it is a blog
+
+Examples (correct)
+/insights/montreal-housing-inventory-trends
+/insights/rent-vs-buy-montreal
+/neighborhoods/plateau-mont-royal-real-estate
+/tools/mortgage-affordability-montreal
+
+Examples (forbidden)
+/blog?id=123
+/2025/03/post-title
+/Insights/MontrealMarket
+
+4. Page-Level SEO Constraints (MANDATORY)
+One page = one primary keyword theme
+
+Each page must define:
+
+1 primary keyword
+
+2–4 secondary keywords
+
+1 user intent type
+
+Example:
+Primary: montreal real estate market trends
+Secondary: montreal housing inventory, montreal home prices
+Intent: informational
+
+Title tag constraints
+
+50–60 characters
+
+Primary keyword first
+
+Brand name last (optional early on)
+
+Format
+
+Primary Keyword – Context or Insight | Brand
+
+
+Example:
+
+Montreal Real Estate Market Trends – What’s Changing | Brand
+
+Meta description constraints
+
+140–160 characters
+
+Explain value clearly
+
+No keyword stuffing
+
+Written for humans
+
+Example:
+
+A clear look at Montreal real estate trends, pricing shifts, and what they mean for buyers and investors this year.
+
+Heading hierarchy (STRICT)
+
+Exactly one H1 per page.
+
+Allowed structure:
+
+H1: Primary topic
+H2: Major subtopic
+H3: Supporting detail
+H4: Only if absolutely necessary
+
+
+Forbidden:
+
+Skipping heading levels
+
+Styling text to “look like” headings
+
+Multiple H1s
+
+5. Content-Length and Depth Constraints
+Minimum content thresholds
+
+Core insight articles: 1,200–2,000 words
+
+Neighborhood pages: 1,000–1,500 words
+
+Tool landing pages: 600–1,000 words
+
+Why:
+
+Competitive SERPs require depth
+
+Google evaluates topical completeness, not word count alone
+
+6. Internal Linking System (Very Important)
+Rules
+
+Every article must link to:
+
+1 higher-level hub page
+
+2 related articles
+
+Anchor text must be descriptive, not generic
+
+Allowed
+
+“Montreal housing inventory trends”
+
+Forbidden
+
+“Click here”
+“Read more”
+
+Hub-and-spoke model (required)
+
+Example:
+
+/insights/montreal-real-estate-market
+├── inventory trends
+├── interest rates impact
+├── buyer vs seller conditions
+├── seasonal pricing shifts
+
+
+This builds topical authority.
+
+7. Neighborhood SEO Constraints (Local Gold)
+
+You must create dedicated neighborhood pages.
+
+Structure
+/neighborhoods/plateau-mont-royal-real-estate
+/neighborhoods/griffintown-real-estate
+/neighborhoods/verdun-real-estate
+
+Each neighborhood page must include:
+
+Overview of area
+
+Housing types
+
+Pricing trends
+
+Buyer profile
+
+Rental considerations
+
+What locals should know
+
+Avoid thin “SEO pages.” These must be genuinely useful.
+
+8. Design Constraints That Impact SEO
+Navigation
+
+HTML links only
+
+No JS-only navigation
+
+No hidden nav items
+
+Text visibility
+
+No text embedded in images
+
+No lazy-loaded critical content
+
+No accordion-only pages for core content
+
+Core Web Vitals (SEO-critical)
+
+Design must support:
+
+LCP < 2.5s
+
+CLS < 0.1
+
+INP < 200ms
+
+This means:
+
+No massive hero images
+
+No layout shifts
+
+Fonts loaded properly
+
+Images sized explicitly
+
+9. Image SEO Constraints
+Every image must have:
+
+Descriptive filename
+
+Contextual alt text
+
+Example:
+
+montreal-housing-inventory-chart-q1-2025.png
+Alt: Montreal housing inventory levels by month
+
+Hero images
+
+Compressed
+
+< 300kb
+
+Use modern formats (WebP/AVIF)
+
+10. Schema and Structured Data (From Day One)
+
+Required schema types:
+
+Organization
+
+Website
+
+Article
+
+Breadcrumb
+
+FAQ (where relevant)
+
+Why:
+
+Improves SERP appearance
+
+Helps Google understand structure
+
+Future-proofs AI search results
+
+11. Editorial & Publishing Constraints
+Publishing cadence
+
+Consistency > volume
+
+1 strong article per week beats 5 weak ones
+
+Content rules
+
+No duplicate content
+
+No auto-generated fluff
+
+No regurgitating stats without interpretation
+
+Google rewards original analysis, especially locally.
+
+12. What We Explicitly Do NOT Do
+
+No keyword stuffing
+
+No city name spam
+
+No doorway pages
+
+No “Montreal Real Estate 2025 Guide” clones
+
+No stock SEO templates
+
+13. Measurement and Feedback Loop
+
+From day one, track:
+
+Impressions by page
+
+Average position
+
+Click-through rate
+
+Index coverage
+
+Internal link flow
+
+SEO is iterative, but structure must be correct upfront.
+
+14. Summary Constraint Statement
+
+If a design choice, animation, or copy decision reduces clarity for Google or users, it does not ship.
+
+This mindset alone will put you ahead of 90 percent of real estate sites.

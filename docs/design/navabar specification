@@ -1,0 +1,418 @@
+Navbar implementation spec
+Files
+
+navbar.html (or your layout template)
+
+navbar.css
+
+navbar.js
+
+Requirements
+
+Logo left
+
+Center nav links
+
+CTA right: Join Free
+
+Sticky top with blur
+
+Two scroll states:
+
+top: 72px, translucent
+
+scrolled: 60px, solid white + border + soft shadow
+
+Nav links:
+
+hover: text turns accent + underline animates in
+
+active: text accent + underline stays visible
+
+Accessibility:
+
+keyboard focus ring
+
+aria-current="page" for active link
+
+skip link recommended
+
+<!-- Optional but recommended for accessibility -->
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" role="banner">
+  <nav class="navbar" aria-label="Primary">
+    <div class="navbar__inner">
+
+      <!-- Left: Logo -->
+      <a class="brand" href="/">
+        <span class="brand__name">BrandName</span>
+        <span class="brand__sub">Montreal Real Estate</span>
+      </a>
+
+      <!-- Center: Nav -->
+      <ul class="nav" role="list">
+        <li class="nav__item">
+          <a class="nav__link" href="/insights">Insights</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="/neighborhoods">Neighborhoods</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="/tools">Tools</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="/about">About</a>
+        </li>
+      </ul>
+
+      <!-- Right: CTA -->
+      <div class="navbar__actions">
+        <a class="btn btn--primary" href="/join">Join Free</a>
+
+        <!-- Mobile toggle -->
+        <button class="icon-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="icon-btn__bars" aria-hidden="true"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile menu panel -->
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <ul class="mobile-menu__list" role="list">
+        <li><a class="mobile-menu__link" href="/insights">Insights</a></li>
+        <li><a class="mobile-menu__link" href="/neighborhoods">Neighborhoods</a></li>
+        <li><a class="mobile-menu__link" href="/tools">Tools</a></li>
+        <li><a class="mobile-menu__link" href="/about">About</a></li>
+      </ul>
+      <div class="mobile-menu__actions">
+        <a class="btn btn--primary btn--full" href="/join">Join Free</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+:root{
+  --ink:#0B0F17;
+  --slate:#4B5563;
+  --surface:#FFFFFF;
+  --surfaceMuted:#F7F8F6;
+  --border:#E6E8EF;
+
+  --accent:#0F766E;
+  --accentHover:#115E59;
+
+  --radius:12px;
+  --shadow:0 10px 30px rgba(11,15,23,0.06);
+  --shadowSoft:0 6px 18px rgba(11,15,23,0.06);
+
+  --navH:72px;
+  --navHScrolled:60px;
+  --container:1280px;
+}
+
+*{ box-sizing:border-box; }
+body{ margin:0; color:var(--ink); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+.skip-link{
+  position:absolute;
+  left:-999px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+.skip-link:focus{
+  left:16px;
+  top:16px;
+  width:auto;
+  height:auto;
+  padding:10px 12px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:10px;
+  z-index:2000;
+}
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.navbar{
+  height:var(--navH);
+  transition:height 200ms ease, background-color 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  background:rgba(255,255,255,0.86);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar.is-scrolled{
+  height:var(--navHScrolled);
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+  box-shadow:var(--shadowSoft);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.navbar__inner{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 20px;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+
+.brand{
+  display:flex;
+  flex-direction:column;
+  text-decoration:none;
+  line-height:1.1;
+}
+.brand__name{
+  font-weight:700;
+  font-size:18px;
+  color:var(--ink);
+}
+.brand__sub{
+  font-size:12px;
+  color:var(--slate);
+  margin-top:2px;
+}
+
+.nav{
+  list-style:none;
+  display:flex;
+  gap:8px;
+  margin:0;
+  padding:0;
+  align-items:center;
+}
+
+.nav__link{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  padding:10px 12px;
+  text-decoration:none;
+  color:var(--ink);
+  font-size:15px;
+  font-weight:500;
+  border-radius:999px;
+  transition:color 150ms ease, background-color 150ms ease;
+}
+
+.nav__link::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:6px;
+  transform:translateX(-50%);
+  height:2px;
+  width:0%;
+  border-radius:999px;
+  background:var(--accent);
+  transition:width 160ms ease;
+}
+
+.nav__link:hover{
+  color:var(--accent);
+}
+
+.nav__link:hover::after{
+  width:70%;
+}
+
+/* Active link (set via aria-current or JS) */
+.nav__link[aria-current="page"]{
+  color:var(--accent);
+}
+.nav__link[aria-current="page"]::after{
+  width:70%;
+}
+
+/* Actions */
+.navbar__actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  border-radius:var(--radius);
+  height:40px;
+  padding:0 14px;
+  font-size:15px;
+  font-weight:600;
+  border:1px solid transparent;
+  transition:transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease, border-color 150ms ease;
+}
+
+.btn--primary{
+  background:var(--accent);
+  color:#fff;
+  box-shadow:0 8px 18px rgba(15,118,110,0.18);
+}
+.btn--primary:hover{
+  background:var(--accentHover);
+  transform:translateY(-1px);
+}
+
+.btn--full{
+  width:100%;
+}
+
+/* Focus accessibility */
+.nav__link:focus-visible,
+.btn:focus-visible,
+.icon-btn:focus-visible,
+.mobile-menu__link:focus-visible{
+  outline:2px solid rgba(15,118,110,0.35);
+  outline-offset:3px;
+}
+
+/* Mobile toggle button */
+.icon-btn{
+  display:none;
+  height:40px;
+  width:44px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:var(--surface);
+}
+
+.icon-btn__bars{
+  display:block;
+  width:18px;
+  height:2px;
+  background:var(--ink);
+  position:relative;
+  margin:0 auto;
+}
+.icon-btn__bars::before,
+.icon-btn__bars::after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:18px;
+  height:2px;
+  background:var(--ink);
+}
+.icon-btn__bars::before{ top:-6px; }
+.icon-btn__bars::after{ top:6px; }
+
+/* Mobile menu */
+.mobile-menu{
+  border-top:1px solid var(--border);
+  background:var(--surface);
+  padding:14px 20px 18px;
+}
+
+.mobile-menu__list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.mobile-menu__link{
+  display:block;
+  padding:12px 10px;
+  border-radius:12px;
+  text-decoration:none;
+  color:var(--ink);
+  font-weight:600;
+}
+.mobile-menu__link:hover{
+  background:var(--surfaceMuted);
+  color:var(--accent);
+}
+
+.mobile-menu__actions{
+  margin-top:12px;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .nav{ display:none; }
+  .icon-btn{ display:inline-flex; align-items:center; justify-content:center; }
+  .brand__sub{ display:none; }
+}
+
+
+(function(){
+  const navbar = document.querySelector('.navbar');
+  const mobileBtn = document.querySelector('.icon-btn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  // Sticky scroll state
+  const onScroll = () => {
+    const scrolled = window.scrollY > 8;
+    navbar.classList.toggle('is-scrolled', scrolled);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Active link highlighting based on current path
+  const setActiveLink = () => {
+    const path = window.location.pathname.replace(/\/$/, '');
+    const links = document.querySelectorAll('.nav__link, .mobile-menu__link');
+
+    links.forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href || !href.startsWith('/')) return;
+
+      const normalizedHref = href.replace(/\/$/, '');
+      const isActive =
+        normalizedHref === path ||
+        (normalizedHref !== '' && path.startsWith(normalizedHref) && normalizedHref.length > 1);
+
+      if (isActive) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+  };
+  setActiveLink();
+
+  // Mobile menu toggle
+  if (mobileBtn && mobileMenu){
+    mobileBtn.addEventListener('click', () => {
+      const isOpen = mobileBtn.getAttribute('aria-expanded') === 'true';
+      mobileBtn.setAttribute('aria-expanded', String(!isOpen));
+      mobileMenu.hidden = isOpen;
+    });
+
+    // Close mobile menu when clicking a link
+    mobileMenu.addEventListener('click', (e) => {
+      const target = e.target;
+      if (target && target.matches('a')){
+        mobileBtn.setAttribute('aria-expanded', 'false');
+        mobileMenu.hidden = true;
+      }
+    });
+  }
+})();
+
+Notes Claude Code should follow (constraints)
+
+Keep nav links as real <a href> tags. No button-based routing without proper anchors.
+
+Keep aria-current="page" for active page.
+
+Do not hide links behind JS-only interactions.
+
+Keep the CTA as an anchor link to /join.
+
+Make sure the sticky header does not cause layout shift. It is position: sticky, stable height.

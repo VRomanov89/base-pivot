@@ -1,0 +1,298 @@
+1) Disclaimer Page Specification
+URL
+
+/disclaimer
+
+SEO
+
+Title: Disclaimer | BrandName
+
+Meta description: Educational information about Montreal real estate. Not financial, legal, or real estate advice.
+
+Required sections
+A. Plain-language summary (top)
+
+Heading: Disclaimer
+Copy (use):
+This website is for educational purposes only. We share market context, frameworks, and analysis to help you think clearly about Montreal real estate decisions.
+
+B. Not advice
+
+Heading: Not professional advice
+Copy (use):
+Nothing on this site should be considered financial advice, legal advice, tax advice, or real estate advice. You should consult qualified professionals before making decisions.
+
+C. Accuracy and timeliness
+
+Heading: Accuracy of information
+Copy (use):
+We aim to keep content accurate and current, but markets change and information can become outdated. We do not guarantee completeness or accuracy.
+
+D. External links
+
+Heading: External links
+Copy (use):
+We may link to third-party websites for convenience. We do not control their content and are not responsible for their practices or accuracy.
+
+E. Market data context
+
+Heading: Market data and interpretation
+Copy (use):
+Charts and commentary reflect our interpretation of publicly available information. Data sources are cited where applicable.
+
+F. Limitation of liability
+
+Heading: Limitation of liability
+Copy (use):
+By using this site, you agree that BrandName is not liable for decisions you make based on the content.
+
+2) Privacy Policy Page Specification
+
+In Quebec, you should label this clearly as a Confidentiality Policy and keep it in clear, simple language. Quebec’s privacy law includes an explicit obligation to publish a confidentiality policy if you collect personal information through technological means.
+
+URL
+
+/privacy
+
+SEO
+
+Title: Privacy Policy | BrandName
+
+Meta description: How we collect, use, store, and protect personal information on BrandName.
+
+Required sections (MVP-complete)
+A. Who we are
+
+Business name
+
+Montreal, Quebec
+
+Contact email for privacy inquiries (even if it is a generic inbox)
+
+“Person in charge of personal information” (Law 25 concept; you can name a role, not necessarily a person)
+
+B. What we collect
+
+Be explicit:
+
+Email address (newsletter)
+
+Name (optional)
+
+Message content (contact forms)
+
+Technical data (IP address, device, analytics events)
+
+Cookies (if used)
+
+C. Why we collect it
+
+Tie each data type to a purpose:
+
+Newsletter delivery
+
+Responding to requests
+
+Improving site performance and content
+
+Security and fraud prevention
+
+D. Consent
+
+State you collect with consent and how users provide it. This aligns with Canadian privacy expectations around consent and transparency (PIPEDA principles).
+
+E. Retention and destruction
+
+Quebec guidance emphasizes that a governance policy should include retention and destruction rules. Include a simple MVP version like:
+
+Newsletter subscriber data retained until unsubscribe
+
+Contact form submissions retained for X months (pick a reasonable number like 12–24 months)
+
+Analytics data retained for X months
+
+This aligns with the “retention and destruction” expectation referenced in Quebec summaries.
+
+F. Sharing and service providers
+
+Name the categories:
+
+Email platform (newsletter)
+
+Analytics (if any)
+
+Hosting provider
+State: shared only as necessary to deliver the service, not sold.
+
+G. Cookies and tracking
+
+If you use cookies, say so and provide:
+
+What cookies do (analytics, preferences)
+
+How to manage them
+
+Quebec real estate regulator guidance explicitly mentions cookie banners “where appropriate” and publishing a confidentiality policy.
+
+H. Access and correction
+
+Include a simple process:
+
+“Email us at ___ to request access, correction, or deletion.”
+
+I. Safeguards
+
+Short, non-technical but credible:
+
+Access controls
+
+Least privilege
+
+Reputable providers
+
+Secure transmission (HTTPS)
+
+J. Changes to policy
+
+Quebec law references notifying users of amendments to the confidentiality policy.
+MVP language:
+
+“We may update this policy and will update the date at the top.”
+
+3) Terms of Use Page Specification
+URL
+
+/terms
+
+SEO
+
+Title: Terms of Use | BrandName
+
+Meta description: Terms for using BrandName including content, limitations, and acceptable use.
+
+Required sections
+A. Acceptance of terms
+
+Using the site implies agreement.
+
+B. Use of content
+
+Personal, non-commercial use is allowed
+
+No scraping or republishing without permission
+
+You can quote short excerpts with attribution (optional)
+
+C. Intellectual property
+
+Site content belongs to BrandName unless otherwise noted.
+
+D. Prohibited activities
+
+Automated scraping
+
+Abuse, security probing
+
+Misrepresenting affiliation
+
+Spamming forms
+
+E. User submissions
+
+If you have forms:
+
+You grant permission for BrandName to respond
+
+You confirm you have rights to what you submit
+
+F. Disclaimers and limitation of liability
+
+Reference the disclaimer page and restate the key limitations.
+
+G. Governing law
+
+Quebec / Canada (keep it simple)
+
+Venue in Quebec (optional)
+
+4) Sources and Methodology Page Specification
+
+This is a massive trust and SEO asset for your “local intelligence” positioning.
+
+URL
+
+/sources
+
+SEO
+
+Title: Sources and Methodology | BrandName
+
+Meta description: How we source and interpret Montreal real estate data, and how to read our charts.
+
+Required sections
+A. Why this page exists
+
+Copy (use):
+We believe real estate decisions improve when people can see the source, understand the assumptions, and interpret the numbers with context. This page explains how we do that.
+
+B. Core sources (categories)
+
+List categories, and later you can add exact sources:
+
+Market listing and sales statistics providers
+
+Mortgage rate and interest rate sources
+
+Government and municipal sources (zoning, tax, permits)
+
+Rental market sources (if you cover it)
+
+C. How we define common terms
+
+Create definitions:
+
+Inventory
+
+Months of inventory
+
+Median vs average price
+
+Sales volume
+
+New listings
+
+Absorption
+
+Days on market
+
+D. How we build charts
+
+Rules:
+
+We show time range
+
+We label units
+
+We avoid cherry-picking windows
+
+We update cadence (monthly or quarterly)
+
+E. Assumptions for tools
+
+For calculators:
+
+Default assumptions disclosed (down payment, amortization, vacancy rate, maintenance)
+
+User-editable inputs
+
+“Outputs are estimates”
+
+F. Updates and corrections
+
+A visible corrections policy:
+
+If you find an error, you fix it and note the update date
+
+G. Contact
+
+“How to report an issue” email.

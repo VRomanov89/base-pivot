@@ -1,0 +1,400 @@
+Footer implementation spec
+Goals
+
+Consistent across site
+
+Strong internal linking (SEO)
+
+Clear trust signals (disclaimer + sources)
+
+Newsletter conversion (Join Free)
+
+Clean, premium look
+
+Layout (desktop)
+
+4-column grid
+
+Brand + short positioning + social
+
+Explore (core sections)
+
+Tools (key tools)
+
+Legal + Contact + Newsletter CTA
+
+Content rules
+
+Use real HTML links
+
+Include a short disclaimer
+
+Include “Source” line on market-data pages via component prop later, but footer can include general language
+
+Add location hint: Montreal
+
+SEO rules
+
+Include links to your main hubs and key subpages
+
+Anchor text should match page intent (no “click here”)
+
+Keep footer links consistent sitewide (helps crawl)
+
+Reference implementation
+
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer__inner">
+
+    <!-- Column 1: Brand -->
+    <div class="footer__col footer__brand">
+      <a class="footer__logo" href="/">
+        <span class="footer__logoName">BrandName</span>
+        <span class="footer__logoSub">Montreal Real Estate</span>
+      </a>
+
+      <p class="footer__tagline">
+        Local insight for smarter Montreal real estate decisions.
+      </p>
+
+      <div class="footer__social" aria-label="Social links">
+        <a class="footer__socialLink" href="#" rel="noopener">LinkedIn</a>
+        <a class="footer__socialLink" href="#" rel="noopener">YouTube</a>
+        <a class="footer__socialLink" href="#" rel="noopener">Instagram</a>
+      </div>
+    </div>
+
+    <!-- Column 2: Explore -->
+    <nav class="footer__col" aria-label="Explore">
+      <h3 class="footer__heading">Explore</h3>
+      <ul class="footer__list" role="list">
+        <li><a class="footer__link" href="/insights">Market Insights</a></li>
+        <li><a class="footer__link" href="/neighborhoods">Montreal Neighborhoods</a></li>
+        <li><a class="footer__link" href="/market-brief">Market Brief</a></li>
+        <li><a class="footer__link" href="/about">About</a></li>
+        <li><a class="footer__link" href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Column 3: Tools -->
+    <nav class="footer__col" aria-label="Tools">
+      <h3 class="footer__heading">Tools</h3>
+      <ul class="footer__list" role="list">
+        <li><a class="footer__link" href="/tools/rent-vs-buy-montreal">Rent vs Buy Calculator</a></li>
+        <li><a class="footer__link" href="/tools/mortgage-affordability-montreal">Mortgage Affordability</a></li>
+        <li><a class="footer__link" href="/tools/cash-flow-rental-property">Rental Cash Flow</a></li>
+        <li><a class="footer__link" href="/tools/closing-costs-quebec">Closing Costs in Quebec</a></li>
+      </ul>
+    </nav>
+
+    <!-- Column 4: Join + Legal -->
+    <div class="footer__col footer__cta">
+      <h3 class="footer__heading">Join Free</h3>
+      <p class="footer__ctaText">
+        Get a short weekly update on what changed in the Montreal market and what to watch next.
+      </p>
+
+      <form class="footer__form" action="/join" method="get">
+        <label class="sr-only" for="email">Email address</label>
+        <input class="footer__input" id="email" name="email" type="email" placeholder="Email address" autocomplete="email" />
+        <button class="btn btn--primary footer__btn" type="submit">Join Free</button>
+      </form>
+
+      <p class="footer__fineprint">
+        No spam. Unsubscribe anytime.
+      </p>
+
+      <div class="footer__meta">
+        <a class="footer__metaLink" href="/privacy">Privacy</a>
+        <a class="footer__metaLink" href="/terms">Terms</a>
+        <a class="footer__metaLink" href="/disclaimer">Disclaimer</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer__bottom">
+    <div class="footer__bottomInner">
+      <p class="footer__copyright">
+        © <span id="year"></span> BrandName. Montreal, Quebec.
+      </p>
+
+      <p class="footer__disclaimer">
+        Information is provided for educational purposes and does not constitute financial, legal, or real estate advice.
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+:root{
+  --ink:#0B0F17;
+  --slate:#4B5563;
+  --surface:#FFFFFF;
+  --surfaceMuted:#F7F8F6;
+  --border:#E6E8EF;
+
+  --accent:#0F766E;
+  --accentHover:#115E59;
+
+  --radius:12px;
+  --container:1280px;
+}
+
+/* Utility */
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+.site-footer{
+  background:var(--surface);
+  border-top:1px solid var(--border);
+}
+
+.footer__inner{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:48px 20px;
+  display:grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+  gap:28px;
+}
+
+.footer__logo{
+  display:inline-flex;
+  flex-direction:column;
+  text-decoration:none;
+  line-height:1.1;
+  margin-bottom:10px;
+}
+.footer__logoName{
+  font-weight:800;
+  font-size:18px;
+  color:var(--ink);
+}
+.footer__logoSub{
+  font-size:12px;
+  color:var(--slate);
+  margin-top:2px;
+}
+
+.footer__tagline{
+  margin:0;
+  color:var(--slate);
+  font-size:14px;
+  line-height:1.5;
+  max-width:34ch;
+}
+
+.footer__social{
+  margin-top:14px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.footer__socialLink{
+  color:var(--slate);
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+}
+.footer__socialLink:hover{
+  color:var(--accent);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.footer__heading{
+  margin:0 0 10px 0;
+  font-size:14px;
+  font-weight:800;
+  color:var(--ink);
+  letter-spacing:0.2px;
+}
+
+.footer__list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.footer__link{
+  color:var(--slate);
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+}
+.footer__link:hover{
+  color:var(--accent);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.footer__ctaText{
+  margin:0 0 12px 0;
+  color:var(--slate);
+  font-size:14px;
+  line-height:1.5;
+}
+
+.footer__form{
+  display:grid;
+  grid-template-columns: 1fr auto;
+  gap:10px;
+  align-items:center;
+  margin-top:10px;
+}
+
+.footer__input{
+  height:40px;
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+  padding:0 12px;
+  font-size:14px;
+  outline:none;
+}
+.footer__input:focus{
+  border-color: rgba(15,118,110,0.45);
+  box-shadow: 0 0 0 3px rgba(15,118,110,0.12);
+}
+
+.footer__btn{
+  height:40px;
+  border-radius:var(--radius);
+}
+
+/* Reuse primary button from navbar if you already have it */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  border-radius:var(--radius);
+  height:40px;
+  padding:0 14px;
+  font-size:15px;
+  font-weight:700;
+  border:1px solid transparent;
+  transition:transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+}
+.btn--primary{
+  background:var(--accent);
+  color:#fff;
+  box-shadow:0 8px 18px rgba(15,118,110,0.18);
+}
+.btn--primary:hover{
+  background:var(--accentHover);
+  transform:translateY(-1px);
+}
+
+.footer__fineprint{
+  margin:10px 0 0 0;
+  color:var(--slate);
+  font-size:12px;
+}
+
+.footer__meta{
+  margin-top:14px;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.footer__metaLink{
+  color:var(--slate);
+  text-decoration:none;
+  font-size:12px;
+  font-weight:700;
+}
+.footer__metaLink:hover{
+  color:var(--accent);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.footer__bottom{
+  border-top:1px solid var(--border);
+  background:var(--surfaceMuted);
+}
+
+.footer__bottomInner{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:16px 20px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.footer__copyright{
+  margin:0;
+  color:var(--slate);
+  font-size:13px;
+  font-weight:600;
+}
+
+.footer__disclaimer{
+  margin:0;
+  color:var(--slate);
+  font-size:13px;
+  line-height:1.4;
+  max-width:70ch;
+}
+
+/* Responsive */
+@media (max-width: 1000px){
+  .footer__inner{
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer__bottomInner{
+    flex-direction:column;
+  }
+}
+@media (max-width: 620px){
+  .footer__inner{
+    grid-template-columns: 1fr;
+    padding:34px 16px;
+  }
+  .footer__form{
+    grid-template-columns: 1fr;
+  }
+}
+
+(function(){
+  const year = document.getElementById('year');
+  if (year) year.textContent = String(new Date().getFullYear());
+})();
+
+
+Footer content constraints (what to tell Claude Code)
+
+Keep links stable across the site for crawl consistency
+
+Do not hide links behind accordions on desktop
+
+Newsletter form should degrade gracefully (works even without JS)
+
+Use real a href links with descriptive anchor text
+
+Keep the disclaimer visible and short
+
+Optional enhancement (recommended)
+
+If you want a slightly more premium feel:
+
+Add a tiny “Back to top” link on the bottom right
+
+Add a “Sources” link in the legal section that leads to a page explaining how you reference Centris, APCIQ, Bank of Canada, etc.
