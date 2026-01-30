@@ -49,6 +49,7 @@
   font-weight: 700;
   font-size: 18px;
   color: var(--ink);
+  letter-spacing: -0.01em;
 }
 
 .brand__sub {
@@ -189,6 +190,7 @@
   text-decoration: none;
   color: var(--ink);
   font-weight: 600;
+  letter-spacing: 0.005em;
   transition: background-color 150ms ease, color 150ms ease;
 }
 

@@ -54,6 +54,7 @@ body {
   background: var(--surface);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* Typography Scale */
@@ -62,6 +63,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
   color: var(--ink);
+  text-rendering: optimizeLegibility;
 }
 
 h1 {
@@ -168,11 +170,16 @@ ul, ol {
   height: 44px;
   padding: 0 20px;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1;
   border: 1px solid transparent;
   cursor: pointer;
   transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease, border-color 150ms ease;
   font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .btn--primary {
@@ -205,7 +212,9 @@ ul, ol {
   padding: 0;
   height: auto;
   font-weight: 600;
+  letter-spacing: 0.005em;
   text-decoration: underline;
+  text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
 
@@ -221,6 +230,7 @@ ul, ol {
   height: 52px;
   padding: 0 28px;
   font-size: 16px;
+  letter-spacing: 0.015em;
 }
 
 /* Focus States for Accessibility */
