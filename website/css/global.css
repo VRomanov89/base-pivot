@@ -175,7 +175,7 @@ ul, ol {
   line-height: 1;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease, border-color 150ms ease;
+  transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease, border-color 150ms ease, color 150ms ease;
   font-family: inherit;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -202,7 +202,8 @@ ul, ol {
 
 .btn--secondary:hover {
   border-color: var(--accent);
-  color: var(--accent);
+  background: rgba(15, 118, 110, 0.04);
+  color: var(--ink);
   transform: translateY(-1px);
 }
 
