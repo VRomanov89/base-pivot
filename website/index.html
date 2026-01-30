@@ -120,8 +120,12 @@
 
     <!-- Hero Section -->
     <section class="hero">
+      <div class="hero__background"></div>
+      <div class="hero__overlay"></div>
+
       <div class="hero__container">
         <div class="hero__content">
+          <div class="hero__badge">Montreal Real Estate Intelligence</div>
           <h1 class="hero__title">Make smarter real estate decisions in Montreal</h1>
           <p class="hero__subtitle">Local market context, neighborhood intelligence, and practical tools that help you decide with confidence.</p>
 
@@ -135,20 +139,37 @@
 
         <div class="hero__visual">
           <div class="market-snapshot">
-            <h2 class="market-snapshot__title">Market Snapshot</h2>
+            <div class="market-snapshot__header">
+              <h2 class="market-snapshot__title">Live Market Snapshot</h2>
+              <span class="market-snapshot__status">Updated Today</span>
+            </div>
 
             <div class="market-snapshot__item">
               <span class="market-snapshot__label">Inventory Trend</span>
-              <span class="market-snapshot__value">Stable</span>
+              <div class="market-snapshot__value-row">
+                <span class="market-snapshot__value">Stable</span>
+                <span class="market-snapshot__icon">📊</span>
+              </div>
             </div>
 
             <div class="market-snapshot__item">
-              <span class="market-snapshot__label">Mortgage Rate Context</span>
-              <span class="market-snapshot__value">Rates influence affordability more than most people expect</span>
+              <span class="market-snapshot__label">Avg. Price (Plateau)</span>
+              <div class="market-snapshot__value-row">
+                <span class="market-snapshot__value">$625K</span>
+                <span class="market-snapshot__change market-snapshot__change--up">+2.3%</span>
+              </div>
             </div>
 
             <div class="market-snapshot__item">
-              <span class="market-snapshot__label">Featured Neighborhoods</span>
+              <span class="market-snapshot__label">Days on Market</span>
+              <div class="market-snapshot__value-row">
+                <span class="market-snapshot__value">32 days</span>
+                <span class="market-snapshot__change market-snapshot__change--down">-8%</span>
+              </div>
+            </div>
+
+            <div class="market-snapshot__item market-snapshot__item--neighborhoods">
+              <span class="market-snapshot__label">Trending Neighborhoods</span>
               <div class="market-snapshot__neighborhoods">
                 <span class="market-snapshot__tag">Verdun</span>
                 <span class="market-snapshot__tag">Plateau</span>
